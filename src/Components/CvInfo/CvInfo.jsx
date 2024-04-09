@@ -6,18 +6,12 @@
  *Skills
  form fields
  */
-import InputField from "../InputField";
+import PersonalDetails from "./PersonalDetails/PersonalDetails";
 
 const CvInfo = () => {
     return (
         <section className="cvInfo">
-            <InputField
-                label="Full Name"
-                type="text"
-                placeholder="Full name"
-                name="fullName"
-                isRequired={true}
-            />
+            <PersonalDetails />
         </section>
     );
 };
