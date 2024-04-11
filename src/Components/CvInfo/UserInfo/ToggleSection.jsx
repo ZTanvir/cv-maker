@@ -1,18 +1,34 @@
 // This is a reuseable component which task is to
 // Show or hide section based on user click
 
+import { useState } from "react";
+
 const ToggleSection = (props) => {
-    const { children } = props;
-    const handleToggleSection = (event) => {};
+    const { sectionIcon, sectionName, children } = props;
+
+    const [isShown, setIsShown] = useState(false);
+
+    const handleToggleSection = (event) => {
+        setIsShown(!isShown);
+    };
+
     return (
-        <div onClick={handleToggleSection}>
-            <div>
+        <div>
+            <div onClick={handleToggleSection}>
                 <span>
-                    <span></span> {sectionName}
+                    {/* school */}
+                    <span className="material-symbols-outlined">
+                        {sectionIcon}
+                    </span>
+                    {sectionName}
                 </span>
-                <span></span>
+                <span className="material-symbols-outlined">
+                    {isShown === true ? "expand_more" : "expand_less"}
+                </span>
             </div>
-            <div>{children}</div>
+
+            {/* hide or show this section when user click */}
+            {isShown === true ? <div>{children}</div> : null}
         </div>
     );
 };
