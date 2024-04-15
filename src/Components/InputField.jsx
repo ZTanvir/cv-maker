@@ -2,7 +2,16 @@ import { useId } from "react";
 
 const InputField = (props) => {
     const inputId = useId();
-    const { label, value, onChange, type, placeholder, name, required } = props;
+    const {
+        label,
+        value,
+        onChange,
+        type,
+        placeholder,
+        name,
+        required,
+        defaultValue,
+    } = props;
     const uniqueId = `${name}${inputId}`;
     return (
         <div>
@@ -15,6 +24,7 @@ const InputField = (props) => {
                 placeholder={placeholder}
                 name={name}
                 required={required}
+                defaultValue={defaultValue}
                 value={value}
                 onChange={onChange}
             />
