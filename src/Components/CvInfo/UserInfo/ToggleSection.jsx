@@ -14,18 +14,18 @@ const ToggleSection = (props) => {
 
     return (
         <div>
-            <div onClick={handleToggleSection}>
+            <button onClick={handleToggleSection}>
                 <span>
                     {/* school */}
                     <span className="material-symbols-outlined">
                         {sectionIcon}
                     </span>
-                    {sectionName}
+                    <span>{sectionName}</span>
                 </span>
                 <span className="material-symbols-outlined">
                     {isShown === true ? "expand_more" : "expand_less"}
                 </span>
-            </div>
+            </button>
 
             {/* hide or show this section when user click */}
             {isShown === true ? <div>{children}</div> : null}
