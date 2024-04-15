@@ -23,7 +23,7 @@ const ToggleSection = (props) => {
                     <span>{sectionName}</span>
                 </span>
                 <span className="material-symbols-outlined">
-                    {isShown === true ? "expand_more" : "expand_less"}
+                    {isShown === true ? "expand_less" : "expand_more"}
                 </span>
             </button>
 

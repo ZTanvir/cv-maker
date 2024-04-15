@@ -13,9 +13,10 @@ const CvInfo = () => {
     return (
         <section className="cvInfo">
             <PersonalDetails />
-            <ToggleSection sectionIcon="school" sectionName="Education">
-                <p>Abcd</p>
-            </ToggleSection>
+            <ToggleSection
+                sectionIcon="school"
+                sectionName="Education"
+            ></ToggleSection>
         </section>
     );
 };
