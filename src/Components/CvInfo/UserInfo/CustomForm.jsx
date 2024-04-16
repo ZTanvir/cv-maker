@@ -1,14 +1,36 @@
-// Generate form based on input data
+// Generate form based on input data and default input data
+import InputField from "../../InputField";
+
 const CustomForm = (props) => {
-    const { formInputData, defaultInputValue } = props;
+    const {
+        formInputData,
+        defaultInputValue,
+        handleSubmitForm,
+        handleDeleteBtn,
+        handleCancelBtn,
+        handleSubmitBtn,
+    } = props;
     return (
-        <form>
-            <button type="button">
-                <span class="material-symbols-outlined">delete</span>
+        <form onSubmit={handleSubmitForm}>
+            {formInputData.map((input) => (
+                <InputField
+                    key={input.id}
+                    label={input.label}
+                    required={input.require}
+                    defaultValue={defaultInputValue[input.name]}
+                    {...input}
+                />
+            ))}
+            <button onClick={handleDeleteBtn} type="button">
+                <span className="material-symbols-outlined">delete</span>
                 <span>Delete</span>
             </button>
-            <button type="button">Cancel</button>
-            <button type="submit">Submit</button>
+            <button onClick={handleCancelBtn} type="button">
+                Cancel
+            </button>
+            <button onClick={handleSubmitBtn} type="submit">
+                Submit
+            </button>
         </form>
     );
 };
