@@ -8,7 +8,6 @@ const CustomForm = (props) => {
         handleSubmitForm,
         handleDeleteBtn,
         handleCancelBtn,
-        handleSubmitBtn,
     } = props;
     return (
         <form onSubmit={handleSubmitForm}>
@@ -28,9 +27,7 @@ const CustomForm = (props) => {
             <button onClick={handleCancelBtn} type="button">
                 Cancel
             </button>
-            <button onClick={handleSubmitBtn} type="submit">
-                Submit
-            </button>
+            <button type="submit">Save</button>
         </form>
     );
 };
