@@ -8,14 +8,14 @@ const CvData = {
     education: [
         {
             id: crypto.randomUUID(),
-            school: "London City University",
+            institute: "London City University",
             degree: "H.S.C",
             startDate: "03/24/2024",
             endDate: "07/23/2024",
         },
         {
             id: crypto.randomUUID(),
-            school: "Dhaka city",
+            institute: "Dhaka city",
             degree: "S.S.C",
             startDate: "02/23/2024",
             endDate: "01/23/2024",

@@ -3,7 +3,7 @@ const EducationFormData = [
         id: crypto.randomUUID(),
         label: "School",
         type: "text",
-        name: "school",
+        name: "institute",
         placeholder: "Enter school / university",
         require: true,
     },
