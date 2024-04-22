@@ -7,11 +7,10 @@ import { useState } from "react";
 import CustomForm from "./CustomForm";
 
 const ItemList = ({ formData, userData, updateUserData }) => {
+    const [defaultFormData, setDefaultFormData] = useState({});
     // Get listData from userData
     const listData = userData;
     console.log(userData);
-    //
-    const defaultFormData = {};
     // Update userdata with new value
     const handleSubmitForm = (event) => {
         event.preventDefault();
@@ -24,19 +23,37 @@ const ItemList = ({ formData, userData, updateUserData }) => {
     const handleDeleteBtn = () => {};
     // Hide form
     const handleCancelBtn = () => {};
+    // view or update institute information
+    const handleInstituteInfo = (event) => {
+        console.log(event.target.getAttribute("data-institute-id"));
+        const instituteId = event.target.getAttribute("data-institute-id");
+        // get data of the instituteName
+        const instituteData = listData.filter(
+            (data) => data.id === instituteId
+        )[0];
+        console.log(instituteData);
+        setDefaultFormData(instituteData);
+    };
     // Show or hide form based on click on visibility
     const handleVisibility = (event) => {
         console.log(event.target);
         // show or hide insitute infomation from cv
     };
+    console.log("---Render---");
 
     return (
         <section>
             <div className="listItem">
+                {/* Generate institute based on list */}
                 {listData.length > 0
                     ? listData.map((item) => (
                           <div key={item.id}>
-                              <span>{item.institute}</span>
+                              <span
+                                  data-institute-id={item.id}
+                                  onClick={handleInstituteInfo}
+                              >
+                                  {item.institute}
+                              </span>
                               <span
                                   onClick={handleVisibility}
                                   className="material-symbols-outlined"
