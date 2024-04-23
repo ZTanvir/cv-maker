@@ -6,18 +6,18 @@
 import { useState } from "react";
 import CustomForm from "./CustomForm";
 
-const ItemList = ({ formData, userData, updateUserData }) => {
-    const [defaultFormData, setDefaultFormData] = useState({});
+const ItemList = ({ formData, formValuesObj, userData, updateUserData }) => {
+    const [formValues, setFormValues] = useState(formValuesObj);
     // Get listData from userData
     const listData = userData;
-    console.log(userData);
     // Update userdata with new value
     const handleSubmitForm = (event) => {
         event.preventDefault();
-        const form = new FormData(event.target);
-        const formData = Object.fromEntries(form.entries());
-        const formDataWithId = { id: crypto.randomUUID(), ...formData };
-        console.log(formDataWithId);
+        console.log("form submitted", {
+            id: crypto.randomUUID(),
+            ...formValues,
+        });
+        setFormValues({ ...formValuesObj });
     };
     // Delete userdata
     const handleDeleteBtn = () => {};
@@ -25,21 +25,24 @@ const ItemList = ({ formData, userData, updateUserData }) => {
     const handleCancelBtn = () => {};
     // view or update institute information
     const handleInstituteInfo = (event) => {
-        console.log(event.target.getAttribute("data-institute-id"));
         const instituteId = event.target.getAttribute("data-institute-id");
         // get data of the instituteName
         const instituteData = listData.filter(
             (data) => data.id === instituteId
         )[0];
-        console.log(instituteData);
-        setDefaultFormData(instituteData);
+        setFormValues({ ...instituteData });
     };
     // Show or hide form based on click on visibility
     const handleVisibility = (event) => {
         console.log(event.target);
         // show or hide insitute infomation from cv
     };
-    console.log("---Render---");
+    const updateFormValue = (event) => {
+        setFormValues({
+            ...formValues,
+            [event.target.name]: event.target.value,
+        });
+    };
 
     return (
         <section>
@@ -67,7 +70,8 @@ const ItemList = ({ formData, userData, updateUserData }) => {
             </div>
             <CustomForm
                 formInputData={formData}
-                defaultInputValue={defaultFormData}
+                formValues={formValues}
+                updateFormValue={updateFormValue}
                 handleSubmitForm={handleSubmitForm}
                 handleDeleteBtn={handleDeleteBtn}
                 handleCancelBtn={handleCancelBtn}

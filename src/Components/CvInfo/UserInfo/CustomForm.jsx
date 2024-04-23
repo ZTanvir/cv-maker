@@ -4,7 +4,8 @@ import InputField from "../../InputField";
 const CustomForm = (props) => {
     const {
         formInputData,
-        defaultInputValue,
+        formValues,
+        updateFormValue,
         handleSubmitForm,
         handleDeleteBtn,
         handleCancelBtn,
@@ -16,7 +17,8 @@ const CustomForm = (props) => {
                     key={input.id}
                     label={input.label}
                     required={input.require}
-                    defaultValue={defaultInputValue[input.name]}
+                    value={formValues[input.name]}
+                    onChange={updateFormValue}
                     {...input}
                 />
             ))}

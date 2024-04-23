@@ -12,6 +12,7 @@ const CvData = {
             degree: "H.S.C",
             startDate: "2014-02-09",
             endDate: "2014-02-09",
+            location: "",
         },
         {
             id: crypto.randomUUID(),
@@ -19,6 +20,7 @@ const CvData = {
             degree: "B.S.C",
             startDate: "2014-02-09",
             endDate: "2014-02-09",
+            location: "",
         },
         {
             id: crypto.randomUUID(),
@@ -26,6 +28,7 @@ const CvData = {
             degree: "S.S.C",
             startDate: "2014-02-09",
             endDate: "2014-02-09",
+            location: "dhaka bd",
         },
     ],
     experience: [{}],

@@ -37,7 +37,7 @@ const EducationFormData = [
         type: "text",
         name: "location",
         placeholder: "Enter Location",
-        require: true,
+        require: false,
     },
 ];
 
