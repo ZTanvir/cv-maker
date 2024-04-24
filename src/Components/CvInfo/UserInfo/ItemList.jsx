@@ -5,26 +5,39 @@
 
 import { useState } from "react";
 import CustomForm from "./CustomForm";
+import Visibility from "./Visibility";
 
 const ItemList = ({ formData, formValuesObj, userData, updateUserData }) => {
     const [formValues, setFormValues] = useState(formValuesObj);
     const [showHideSection, setShowHideSection] = useState(false);
+
     // Get listData from userData
     const listData = userData;
+
     // Update userdata with new value
     const handleSubmitForm = (event) => {
         event.preventDefault();
         console.log("form submitted", {
             ...formValues,
-            id: crypto.randomUUID(),
         });
-        updateUserData();
+        // updateUserData();
         setFormValues({ ...formValuesObj });
+        // hide edit insitute infromation form
+        setShowHideSection(false);
     };
+
     // Delete userdata
-    const handleDeleteBtn = () => {};
-    // Hide form
-    const handleCancelBtn = () => {};
+    const handleDeleteBtn = (event) => {
+        // hide edit insitute infromation form
+        setShowHideSection(false);
+    };
+
+    // Cancel updating institute information
+    const handleCancelBtn = (event) => {
+        // hide edit insitute infromation form
+        setShowHideSection(false);
+    };
+
     // view or update institute information
     const handleInstituteInfo = (event) => {
         const instituteId = event.target.getAttribute("data-institute-id");
@@ -36,16 +49,18 @@ const ItemList = ({ formData, formValuesObj, userData, updateUserData }) => {
         // show edit institute form section
         setShowHideSection(true);
     };
-    // Show or hide form based on click on visibility
-    const handleVisibility = (event) => {
-        console.log(event.target);
-        // show or hide insitute infomation from cv
-    };
+
+    // get user types value in input fields
     const updateFormValue = (event) => {
         setFormValues({
             ...formValues,
             [event.target.name]: event.target.value,
         });
+    };
+
+    // Add institute infromation will be visiable or not
+    const updateVisibilityInfo = (isVisiable, id) => {
+        console.log(isVisiable, id);
     };
 
     return (
@@ -62,13 +77,12 @@ const ItemList = ({ formData, formValuesObj, userData, updateUserData }) => {
                                   >
                                       {item.institute}
                                   </span>
-                                  <span
-                                      onClick={handleVisibility}
-                                      className="material-symbols-outlined"
-                                  >
-                                      visibility
-                                      {/* "visibility_off" */}
-                                  </span>
+                                  <Visibility
+                                      id={item.id}
+                                      updateVisibilityInfo={
+                                          updateVisibilityInfo
+                                      }
+                                  />
                               </div>
                           ))
                         : null}
