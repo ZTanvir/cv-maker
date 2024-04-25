@@ -42,6 +42,13 @@ const ItemList = ({
 
     // Delete userdata
     const handleDeleteBtn = (event) => {
+        const id = formValues.id;
+        // remove user institute data based which has similar id as edited form id
+        const updatedInstituteData = userData.filter((institute) => {
+            return institute.id !== id;
+        });
+        // update cv data with new edited institute information
+        updateCvData({ ...userCvData, education: [...updatedInstituteData] });
         // hide edit insitute infromation form
         setShowHideSection(false);
     };
@@ -74,7 +81,6 @@ const ItemList = ({
 
     // Add institute infromation will be visiable or not
     const updateVisibilityInfo = (id, isVisiable) => {
-        console.log(id, isVisiable);
         const updatedInstituteData = userData.map((institute) => {
             return institute.id === id
                 ? { ...institute, visibility: isVisiable }
