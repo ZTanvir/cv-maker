@@ -7,22 +7,36 @@ import { useState } from "react";
 import CustomForm from "./CustomForm";
 import Visibility from "./Visibility";
 
-const ItemList = ({ formData, formValuesObj, userData, updateUserData }) => {
+const ItemList = ({
+    formData,
+    formValuesObj,
+    userData,
+    userCvData,
+    updateCvData,
+}) => {
     const [formValues, setFormValues] = useState(formValuesObj);
     const [showHideSection, setShowHideSection] = useState(false);
 
+    // console.log("userData", userData);
     // Get listData from userData
     const listData = userData;
 
     // Update userdata with new value
     const handleSubmitForm = (event) => {
         event.preventDefault();
-        console.log("form submitted", {
-            ...formValues,
+        // get the id of the formValues
+        const id = formValues.id;
+        // update user institute infomation based on user id
+        const updatedInstituteData = userData.map((institute) => {
+            return institute.id === id
+                ? { ...institute, ...formValues }
+                : { ...institute };
         });
-        // updateUserData();
+        // update cv data with new edited institute information
+        updateCvData({ ...userCvData, education: [...updatedInstituteData] });
+        // reset the form to it's initital value
         setFormValues({ ...formValuesObj });
-        // hide edit insitute infromation form
+        // hide edit insititute infromation form
         setShowHideSection(false);
     };
 

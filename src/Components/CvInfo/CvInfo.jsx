@@ -17,7 +17,7 @@ import { useState } from "react";
 const CvInfo = () => {
     const cvInfo = CvData;
     const [cvData, setCvData] = useState(cvInfo);
-    console.log(cvData);
+
     const educationData = cvData.education;
 
     const formValuesObj = generateObjectFromArrayOfObject(
@@ -36,7 +36,8 @@ const CvInfo = () => {
                 formData={EducationFormData}
                 formValuesObj={formValuesObj}
                 userData={educationData}
-                updateUserData={setCvData}
+                userCvData={cvData}
+                updateCvData={setCvData}
             />
         </section>
     );
