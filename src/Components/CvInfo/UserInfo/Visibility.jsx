@@ -6,7 +6,7 @@ const Visibility = ({ id, updateVisibilityInfo }) => {
         // React state update are asynchronous
         // to get the updated state value we have stored state value to a variable
         const isVisiable = visibility;
-        updateVisibilityInfo(!isVisiable, id);
+        updateVisibilityInfo(id, !isVisiable);
         setVisibility(!visibility);
     };
 
@@ -14,6 +14,7 @@ const Visibility = ({ id, updateVisibilityInfo }) => {
         <span
             className="material-symbols-outlined"
             data-institute-id={id}
+            title={visibility === true ? "Hide" : "Show"}
             onClick={handleVisibility}
         >
             {visibility === true ? "visibility" : "visibility_off"}

@@ -73,8 +73,14 @@ const ItemList = ({
     };
 
     // Add institute infromation will be visiable or not
-    const updateVisibilityInfo = (isVisiable, id) => {
-        console.log(isVisiable, id);
+    const updateVisibilityInfo = (id, isVisiable) => {
+        console.log(id, isVisiable);
+        const updatedInstituteData = userData.map((institute) => {
+            return institute.id === id
+                ? { ...institute, visibility: isVisiable }
+                : { ...institute };
+        });
+        updateCvData({ ...userCvData, education: [...updatedInstituteData] });
     };
 
     return (
