@@ -6,6 +6,7 @@
 import { useState } from "react";
 import CustomForm from "./CustomForm";
 import Visibility from "./Visibility";
+import AddInfoSection from "./AddInfoSection";
 
 const ItemList = ({
     formData,
@@ -26,29 +27,53 @@ const ItemList = ({
         event.preventDefault();
         // get the id of the formValues
         const id = formValues.id;
+        console.log(formValues, formValues.id);
+
         // update user institute infomation based on user id
         const updatedInstituteData = userData.map((institute) => {
             return institute.id === id
                 ? { ...institute, ...formValues }
                 : { ...institute };
         });
+        const newInstituteData =
+            id === true
+                ? [...updatedInstituteData]
+                : [
+                      ...updatedInstituteData,
+                      { id: crypto.randomUUID(), ...formValues },
+                  ];
+        id === true
+            ? updateCvData({
+                  ...userCvData,
+                  education: [...newInstituteData],
+              })
+            : updateCvData({
+                  ...userCvData,
+                  education: [...newInstituteData],
+              });
         // update cv data with new edited institute information
-        updateCvData({ ...userCvData, education: [...updatedInstituteData] });
+
         // reset the form to it's initital value
         setFormValues({ ...formValuesObj });
         // hide edit insititute infromation form
         setShowHideSection(false);
     };
-
+    console.log("cvData", userCvData);
     // Delete userdata
     const handleDeleteBtn = (event) => {
         const id = formValues.id;
         // remove user institute data based which has similar id as edited form id
         const updatedInstituteData = userData.filter((institute) => {
+            console.log(institute.id, " found");
             return institute.id !== id;
         });
         // update cv data with new edited institute information
-        updateCvData({ ...userCvData, education: [...updatedInstituteData] });
+        updatedInstituteData
+            ? updateCvData({
+                  ...userCvData,
+                  education: [...updatedInstituteData],
+              })
+            : null;
         // hide edit insitute infromation form
         setShowHideSection(false);
     };
@@ -88,6 +113,9 @@ const ItemList = ({
         });
         updateCvData({ ...userCvData, education: [...updatedInstituteData] });
     };
+    const handleAddInfoBtn = () => {
+        console.log("Clicked add education btn");
+    };
 
     return (
         <section>
@@ -126,6 +154,17 @@ const ItemList = ({
                     />
                 </div>
             )}
+
+            <AddInfoSection
+                addInfoBtnText="Education"
+                handleAddInfoBtn={handleAddInfoBtn}
+                formInputData={formData}
+                formValues={formValues}
+                updateFormValue={updateFormValue}
+                handleSubmitForm={handleSubmitForm}
+                handleDeleteBtn={handleDeleteBtn}
+                handleCancelBtn={handleCancelBtn}
+            />
         </section>
     );
 };
