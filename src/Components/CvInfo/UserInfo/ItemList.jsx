@@ -6,7 +6,7 @@
 import { useState } from "react";
 import CustomForm from "./CustomForm";
 import Visibility from "./Visibility";
-import AddInfoSection from "./AddInfoSection";
+import AddInfoButton from "./AddInfoButton";
 
 const ItemList = ({
     formData,
@@ -118,11 +118,14 @@ const ItemList = ({
     };
     const handleAddInfoBtn = () => {
         console.log("Clicked add education btn");
+        setFormValues({...formValuesObj})
+        setShowHideSection(!showHideSection)
     };
 
     return (
         <section>
-            {!showHideSection && (
+            <div className="instituteList">
+                 {!showHideSection && (
                 <div className="listItem">
                     {/* Generate institute based on list */}
                     {listData.length > 0
@@ -158,15 +161,11 @@ const ItemList = ({
                 </div>
             )}
 
-            <AddInfoSection
-                addInfoBtnText="Education"
-                handleAddInfoBtn={handleAddInfoBtn}
-                formInputData={formData}
-                formValues={formValues}
-                updateFormValue={updateFormValue}
-                handleSubmitForm={handleSubmitForm}
-                handleDeleteBtn={handleDeleteBtn}
-                handleCancelBtn={handleCancelBtn}
+        </div>
+             <AddInfoButton
+                btnIcon="Add"
+                buttonName="Education"
+                handleButton={handleAddInfoBtn}
             />
         </section>
     );
