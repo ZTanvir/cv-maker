@@ -18,7 +18,6 @@ const ItemList = ({
     const [formValues, setFormValues] = useState(formValuesObj);
     const [showHideSection, setShowHideSection] = useState(false);
 
-    // console.log("userData", userData);
     // Get listData from userData
     const listData = userData;
 
@@ -26,23 +25,26 @@ const ItemList = ({
     const handleSubmitForm = (event) => {
         event.preventDefault();
         // get the id of the formValues
-        const id = formValues.id;
-        console.log(formValues, formValues.id);
-
+        const updatedInstituteId = formValues.id;
+ 
         // update user institute infomation based on user id
         const updatedInstituteData = userData.map((institute) => {
-            return institute.id === id
+            return institute.id === updatedInstituteId
                 ? { ...institute, ...formValues }
                 : { ...institute };
         });
+        // if aform data is loaded form list of institutes
+        // update the changed form data and
+        // if it not add new form data
+        // along with unique id to the list
         const newInstituteData =
-            id === true
+        Boolean(updatedInstituteId)
                 ? [...updatedInstituteData]
                 : [
                       ...updatedInstituteData,
                       { id: crypto.randomUUID(), ...formValues },
                   ];
-        id === true
+        Boolean(updatedInstituteId)
             ? updateCvData({
                   ...userCvData,
                   education: [...newInstituteData],
@@ -58,7 +60,7 @@ const ItemList = ({
         // hide edit insititute infromation form
         setShowHideSection(false);
     };
-    console.log("cvData", userCvData);
+
     // Delete userdata
     const handleDeleteBtn = (event) => {
         const id = formValues.id;
@@ -81,6 +83,7 @@ const ItemList = ({
     // Cancel updating institute information
     const handleCancelBtn = (event) => {
         // hide edit insitute infromation form
+        setFormValues({...formValuesObj})
         setShowHideSection(false);
     };
 
