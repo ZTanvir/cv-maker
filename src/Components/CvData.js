@@ -13,6 +13,7 @@ const CvData = {
             startDate: "2014-02-09",
             endDate: "2014-02-09",
             location: "",
+            visibility: true,
         },
         {
             id: crypto.randomUUID(),
@@ -21,6 +22,7 @@ const CvData = {
             startDate: "2014-02-09",
             endDate: "2014-02-09",
             location: "",
+            visibility: true,
         },
         {
             id: crypto.randomUUID(),
@@ -29,6 +31,7 @@ const CvData = {
             startDate: "2014-02-09",
             endDate: "2014-02-09",
             location: "dhaka bd",
+            visibility: true,
         },
     ],
     experience: [{}],

@@ -8,7 +8,7 @@
  */
 import PersonalDetails from "./PersonalDetails/PersonalDetails";
 import ToggleSection from "./UserInfo/ToggleSection";
-import ItemList from "./UserInfo/ItemList";
+import InstituteList from "./UserInfo/InstituteList.jsx";
 import CvData from "../CvData";
 import EducationFormData from "./UserInfo/FormData/EducationFormData";
 import { generateObjectFromArrayOfObject, foo } from "../../utils/helpers.js";
@@ -28,17 +28,15 @@ const CvInfo = () => {
     return (
         <section className="cvInfo">
             <PersonalDetails />
-            <ToggleSection
-                sectionIcon="school"
-                sectionName="Education"
-            ></ToggleSection>
-            <ItemList
-                formData={EducationFormData}
-                formValuesObj={formValuesObj}
-                userData={educationData}
-                userCvData={cvData}
-                updateCvData={setCvData}
-            />
+            <ToggleSection sectionIcon="school" sectionName="Education">
+                <InstituteList
+                    formData={EducationFormData}
+                    formValuesObj={formValuesObj}
+                    userData={educationData}
+                    userCvData={cvData}
+                    updateCvData={setCvData}
+                />
+            </ToggleSection>
         </section>
     );
 };

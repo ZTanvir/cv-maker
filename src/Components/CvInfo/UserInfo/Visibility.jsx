@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-const Visibility = ({ id, updateVisibilityInfo }) => {
-    const [visibility, setVisibility] = useState(true);
+const Visibility = ({ id, isVisible, updateVisibilityInfo }) => {
+    const [visibility, setVisibility] = useState(isVisible);
     const handleVisibility = () => {
         // React state update are asynchronous
         // to get the updated state value we have stored state value to a variable
-        const isVisiable = visibility;
-        updateVisibilityInfo(id, !isVisiable);
+        const visible = visibility;
+        updateVisibilityInfo(id, !visible);
         setVisibility(!visibility);
     };
 

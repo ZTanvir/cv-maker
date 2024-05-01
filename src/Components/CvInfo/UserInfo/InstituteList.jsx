@@ -26,7 +26,7 @@ const ItemList = ({
         event.preventDefault();
         // get the id of the formValues
         const updatedInstituteId = formValues.id;
- 
+
         // update user institute infomation based on user id
         const updatedInstituteData = userData.map((institute) => {
             return institute.id === updatedInstituteId
@@ -37,13 +37,12 @@ const ItemList = ({
         // update the changed form data and
         // if it not add new form data
         // along with unique id to the list
-        const newInstituteData =
-        Boolean(updatedInstituteId)
-                ? [...updatedInstituteData]
-                : [
-                      ...updatedInstituteData,
-                      { id: crypto.randomUUID(), ...formValues },
-                  ];
+        const newInstituteData = Boolean(updatedInstituteId)
+            ? [...updatedInstituteData]
+            : [
+                  ...updatedInstituteData,
+                  { id: crypto.randomUUID(), visibility: true, ...formValues },
+              ];
         Boolean(updatedInstituteId)
             ? updateCvData({
                   ...userCvData,
@@ -66,7 +65,6 @@ const ItemList = ({
         const id = formValues.id;
         // remove user institute data based which has similar id as edited form id
         const updatedInstituteData = userData.filter((institute) => {
-            console.log(institute.id, " found");
             return institute.id !== id;
         });
         // update cv data with new edited institute information
@@ -83,7 +81,7 @@ const ItemList = ({
     // Cancel updating institute information
     const handleCancelBtn = (event) => {
         // hide edit insitute infromation form
-        setFormValues({...formValuesObj})
+        setFormValues({ ...formValuesObj });
         setShowHideSection(false);
     };
 
@@ -108,65 +106,71 @@ const ItemList = ({
     };
 
     // Add institute infromation will be visiable or not
-    const updateVisibilityInfo = (id, isVisiable) => {
+    const handleVisibilityInfo = (instituteId, isVisiable) => {
+        console.log(instituteId, isVisiable);
         const updatedInstituteData = userData.map((institute) => {
-            return institute.id === id
+            return institute.id === instituteId
                 ? { ...institute, visibility: isVisiable }
                 : { ...institute };
         });
+        console.log("Institute Data", updatedInstituteData);
         updateCvData({ ...userCvData, education: [...updatedInstituteData] });
     };
     const handleAddInfoBtn = () => {
-        console.log("Clicked add education btn");
-        setFormValues({...formValuesObj})
-        setShowHideSection(!showHideSection)
+        // poplution form controller with default form values
+        setFormValues({ ...formValuesObj });
+        // show-hide list of institute section
+        setShowHideSection(true);
     };
-
     return (
         <section>
             <div className="instituteList">
-                 {!showHideSection && (
-                <div className="listItem">
-                    {/* Generate institute based on list */}
-                    {listData.length > 0
-                        ? listData.map((item) => (
-                              <div key={item.id}>
-                                  <span
-                                      data-institute-id={item.id}
-                                      onClick={handleInstituteInfo}
-                                  >
-                                      {item.institute}
-                                  </span>
-                                  <Visibility
-                                      id={item.id}
-                                      updateVisibilityInfo={
-                                          updateVisibilityInfo
-                                      }
-                                  />
-                              </div>
-                          ))
-                        : null}
-                </div>
-            )}
-            {showHideSection && (
-                <div>
-                    <CustomForm
-                        formInputData={formData}
-                        formValues={formValues}
-                        updateFormValue={updateFormValue}
-                        handleSubmitForm={handleSubmitForm}
-                        handleDeleteBtn={handleDeleteBtn}
-                        handleCancelBtn={handleCancelBtn}
+                {!showHideSection && (
+                    <div className="listItem">
+                        {/* Generate institute based on list */}
+                        {listData.length > 0
+                            ? listData.map((item) => (
+                                  <div key={item.id}>
+                                      <span
+                                          data-institute-id={item.id}
+                                          onClick={handleInstituteInfo}
+                                      >
+                                          {item.institute}
+                                      </span>
+                                      <Visibility
+                                          id={item.id}
+                                          isVisible={item.visibility}
+                                          updateVisibilityInfo={
+                                              handleVisibilityInfo
+                                          }
+                                      />
+                                  </div>
+                              ))
+                            : null}
+                    </div>
+                )}
+                {showHideSection && (
+                    <div>
+                        <CustomForm
+                            formInputData={formData}
+                            formValues={formValues}
+                            updateFormValue={updateFormValue}
+                            handleSubmitForm={handleSubmitForm}
+                            handleDeleteBtn={handleDeleteBtn}
+                            handleCancelBtn={handleCancelBtn}
+                        />
+                    </div>
+                )}
+            </div>
+            <div className="addInstituteBtn">
+                {!showHideSection && (
+                    <AddInfoButton
+                        btnIcon="Add"
+                        buttonName="Education"
+                        handleButton={handleAddInfoBtn}
                     />
-                </div>
-            )}
-
-        </div>
-             <AddInfoButton
-                btnIcon="Add"
-                buttonName="Education"
-                handleButton={handleAddInfoBtn}
-            />
+                )}
+            </div>
         </section>
     );
 };
