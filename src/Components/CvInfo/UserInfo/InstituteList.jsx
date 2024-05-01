@@ -14,6 +14,7 @@ const ItemList = ({
     userData,
     userCvData,
     updateCvData,
+    addInstituteBtnName,
 }) => {
     const [formValues, setFormValues] = useState(formValuesObj);
     const [showHideSection, setShowHideSection] = useState(false);
@@ -166,7 +167,7 @@ const ItemList = ({
                 {!showHideSection && (
                     <AddInfoButton
                         btnIcon="Add"
-                        buttonName="Education"
+                        buttonName={addInstituteBtnName}
                         handleButton={handleAddInfoBtn}
                     />
                 )}

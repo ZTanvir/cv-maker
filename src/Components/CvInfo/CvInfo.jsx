@@ -13,6 +13,7 @@ import CvData from "../CvData";
 import EducationFormData from "./UserInfo/FormData/EducationFormData";
 import { generateObjectFromArrayOfObject, foo } from "../../utils/helpers.js";
 import { useState } from "react";
+import InstituteInfo from "./UserInfo/InstituteInfo.jsx";
 
 const CvInfo = () => {
     const cvInfo = CvData;
@@ -28,15 +29,13 @@ const CvInfo = () => {
     return (
         <section className="cvInfo">
             <PersonalDetails />
-            <ToggleSection sectionIcon="school" sectionName="Education">
-                <InstituteList
-                    formData={EducationFormData}
-                    formValuesObj={formValuesObj}
-                    userData={educationData}
-                    userCvData={cvData}
-                    updateCvData={setCvData}
-                />
-            </ToggleSection>
+            <InstituteInfo
+                formData={EducationFormData}
+                cvData={cvData}
+                setCvData={setCvData}
+                sectionIcon="school"
+                sectionName="Education"
+            />
         </section>
     );
 };
