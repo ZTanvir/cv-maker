@@ -1,5 +1,7 @@
 // This is a reuseable component
-// It show institute infomation of an user
+// It shows institute infomation of an user
+// user can edit,add new institute information
+
 import ToggleSection from "./ToggleSection";
 import InstituteList from "./InstituteList";
 import { generateObjectFromArrayOfObject } from "../../../utils/helpers";
@@ -11,7 +13,9 @@ const instituteInfo = ({
     sectionIcon,
     sectionName,
 }) => {
-    const educationData = cvData[sectionName.toLowerCase()];
+    // InstituteData provided by user
+    const instituteData = cvData[sectionName.toLowerCase()];
+    // Create form values object from form data
     const formvaluesobj = generateObjectFromArrayOfObject(formData, "name");
 
     return (
@@ -20,7 +24,7 @@ const instituteInfo = ({
                 <InstituteList
                     formData={formData}
                     formValuesObj={formvaluesobj}
-                    userData={educationData}
+                    userData={instituteData}
                     userCvData={cvData}
                     updateCvData={setCvData}
                     addInstituteBtnName={sectionName}

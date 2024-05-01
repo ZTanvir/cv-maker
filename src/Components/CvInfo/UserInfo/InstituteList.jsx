@@ -17,10 +17,7 @@ const ItemList = ({
     addInstituteBtnName,
 }) => {
     const [formValues, setFormValues] = useState(formValuesObj);
-    const [showHideSection, setShowHideSection] = useState(false);
-
-    // Get listData from userData
-    const listData = userData;
+    const [hideSection, setHideSection] = useState(false);
 
     // Update userdata with new value
     const handleSubmitForm = (event) => {
@@ -34,10 +31,12 @@ const ItemList = ({
                 ? { ...institute, ...formValues }
                 : { ...institute };
         });
-        // if aform data is loaded form list of institutes
-        // update the changed form data and
-        // if it not add new form data
-        // along with unique id to the list
+        /* if a form data is loaded form list of institutes
+        That means the form data is already in out dataset
+        so update the changed form data only */
+
+        /*  When we add new form data to the dataset add from data
+        along with unique id and visibility to the list */
         const newInstituteData = Boolean(updatedInstituteId)
             ? [...updatedInstituteData]
             : [
@@ -57,8 +56,8 @@ const ItemList = ({
 
         // reset the form to it's initital value
         setFormValues({ ...formValuesObj });
-        // hide edit insititute infromation form
-        setShowHideSection(false);
+        // hide form that let us edit insititute information
+        setHideSection(false);
     };
 
     // Delete userdata
@@ -75,27 +74,28 @@ const ItemList = ({
                   education: [...updatedInstituteData],
               })
             : null;
-        // hide edit insitute infromation form
-        setShowHideSection(false);
+        // hide form that let us edit insititute information
+        setHideSection(false);
     };
 
     // Cancel updating institute information
     const handleCancelBtn = (event) => {
-        // hide edit insitute infromation form
+        // Set form values to its initial state
         setFormValues({ ...formValuesObj });
-        setShowHideSection(false);
+        // hide form that let us edit insititute information
+        setHideSection(false);
     };
 
     // view or update institute information
     const handleInstituteInfo = (event) => {
         const instituteId = event.target.getAttribute("data-institute-id");
         // get data of the instituteName
-        const instituteData = listData.filter(
+        const instituteData = userData.filter(
             (data) => data.id === instituteId
         )[0];
         setFormValues({ ...instituteData });
         // show edit institute form section
-        setShowHideSection(true);
+        setHideSection(true);
     };
 
     // get user types value in input fields
@@ -106,31 +106,29 @@ const ItemList = ({
         });
     };
 
-    // Add institute infromation will be visiable or not
+    // Add institute information will be visiable or not
     const handleVisibilityInfo = (instituteId, isVisiable) => {
-        console.log(instituteId, isVisiable);
         const updatedInstituteData = userData.map((institute) => {
             return institute.id === instituteId
                 ? { ...institute, visibility: isVisiable }
                 : { ...institute };
         });
-        console.log("Institute Data", updatedInstituteData);
         updateCvData({ ...userCvData, education: [...updatedInstituteData] });
     };
     const handleAddInfoBtn = () => {
         // poplution form controller with default form values
         setFormValues({ ...formValuesObj });
         // show-hide list of institute section
-        setShowHideSection(true);
+        setHideSection(true);
     };
     return (
         <section>
             <div className="instituteList">
-                {!showHideSection && (
+                {!hideSection && (
                     <div className="listItem">
-                        {/* Generate institute based on list */}
-                        {listData.length > 0
-                            ? listData.map((item) => (
+                        {/* Generate institute based on user data */}
+                        {userData.length > 0
+                            ? userData.map((item) => (
                                   <div key={item.id}>
                                       <span
                                           data-institute-id={item.id}
@@ -150,7 +148,10 @@ const ItemList = ({
                             : null}
                     </div>
                 )}
-                {showHideSection && (
+                {/* Show or hide institute Form when user want to edit institute data
+                or add new institute data
+                */}
+                {hideSection && (
                     <div>
                         <CustomForm
                             formInputData={formData}
@@ -164,7 +165,8 @@ const ItemList = ({
                 )}
             </div>
             <div className="addInstituteBtn">
-                {!showHideSection && (
+                {/* Show add institute information form when click on + button */}
+                {!hideSection && (
                     <AddInfoButton
                         btnIcon="Add"
                         buttonName={addInstituteBtnName}
