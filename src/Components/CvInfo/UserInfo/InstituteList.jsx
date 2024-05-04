@@ -11,6 +11,7 @@ import AddInfoButton from "./AddInfoButton";
 const ItemList = ({
     formData,
     formValuesObj,
+    sectionTitle,
     userData,
     userCvData,
     updateCvData,
@@ -46,11 +47,11 @@ const ItemList = ({
         Boolean(updatedInstituteId)
             ? updateCvData({
                   ...userCvData,
-                  education: [...newInstituteData],
+                  [sectionTitle]: [...newInstituteData],
               })
             : updateCvData({
                   ...userCvData,
-                  education: [...newInstituteData],
+                  [sectionTitle]: [...newInstituteData],
               });
         // update cv data with new edited institute information
 
@@ -71,7 +72,7 @@ const ItemList = ({
         updatedInstituteData
             ? updateCvData({
                   ...userCvData,
-                  education: [...updatedInstituteData],
+                  [sectionTitle]: [...updatedInstituteData],
               })
             : null;
         // hide form that let us edit insititute information
@@ -113,7 +114,10 @@ const ItemList = ({
                 ? { ...institute, visibility: isVisiable }
                 : { ...institute };
         });
-        updateCvData({ ...userCvData, education: [...updatedInstituteData] });
+        updateCvData({
+            ...userCvData,
+            [sectionTitle]: [...updatedInstituteData],
+        });
     };
     const handleAddInfoBtn = () => {
         // poplution form controller with default form values

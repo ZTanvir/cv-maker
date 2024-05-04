@@ -9,7 +9,7 @@
 import PersonalDetails from "./PersonalDetails/PersonalDetails";
 import CvData from "../CvData";
 import EducationFormData from "./UserInfo/FormData/EducationFormData";
-import { generateObjectFromArrayOfObject, foo } from "../../utils/helpers.js";
+import ExperienceFormData from "./UserInfo/FormData/ExperienceFormData.js";
 import { useState } from "react";
 import InstituteInfo from "./UserInfo/InstituteInfo.jsx";
 
@@ -26,6 +26,13 @@ const CvInfo = () => {
                 setCvData={setCvData}
                 sectionIcon="school"
                 sectionName="Education"
+            />
+            <InstituteInfo
+                formData={ExperienceFormData}
+                cvData={cvData}
+                setCvData={setCvData}
+                sectionIcon="work"
+                sectionName="Experience"
             />
         </section>
     );

@@ -13,17 +13,18 @@ const instituteInfo = ({
     sectionIcon,
     sectionName,
 }) => {
+    const sectionTitle = sectionName.toLowerCase();
     // InstituteData provided by user
-    const instituteData = cvData[sectionName.toLowerCase()];
+    const instituteData = cvData[sectionTitle];
     // Create form values object from form data
     const formvaluesobj = generateObjectFromArrayOfObject(formData, "name");
-
     return (
         <>
             <ToggleSection sectionIcon={sectionIcon} sectionName={sectionName}>
                 <InstituteList
                     formData={formData}
                     formValuesObj={formvaluesobj}
+                    sectionTitle={sectionTitle}
                     userData={instituteData}
                     userCvData={cvData}
                     updateCvData={setCvData}

@@ -34,6 +34,6 @@ const CvData = {
             visibility: true,
         },
     ],
-    experience: [{}],
+    experience: [],
 };
 export default CvData;

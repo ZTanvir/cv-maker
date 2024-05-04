@@ -19,6 +19,7 @@ const CustomForm = (props) => {
                     required={input.require}
                     value={formValues[input.name]}
                     onChange={updateFormValue}
+                    type={input.type}
                     {...input}
                 />
             ))}
