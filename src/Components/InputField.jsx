@@ -1,4 +1,5 @@
 import { useId } from "react";
+import styles from "../styles/inputField.module.css";
 
 const InputField = (props) => {
     const inputId = useId();
@@ -15,7 +16,7 @@ const InputField = (props) => {
     } = props;
     const uniqueId = `${name}${inputId}`;
     return (
-        <div>
+        <div className={styles.inputField}>
             <label htmlFor={uniqueId}>
                 {label}:{required ? "*" : " (optional)"}
             </label>
