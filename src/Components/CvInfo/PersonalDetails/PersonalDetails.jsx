@@ -10,14 +10,6 @@ const PersonalDetails = () => {
         jobSummary: "",
     });
 
-    // save user input from the text area
-    const textareaOnchange = (event) => {
-        setPersonalDetails({
-            ...personalDetails,
-            jobSummary: event.target.value,
-        });
-    };
-
     // save user input from profession,first name,last name
     const inputOnchange = (event) => {
         setPersonalDetails({
@@ -29,30 +21,15 @@ const PersonalDetails = () => {
     return (
         <section className="">
             <h3>Personal Details</h3>
-            <form>
-                {personalDetailsData.map((input) => {
-                    {
-                        return input.type === "textarea" ? (
-                            <label key={input.id}>
-                                {input.label}:
-                                {input.required ? "*" : " (optional)"}
-                                <textarea
-                                    key={input.id}
-                                    {...input}
-                                    value={personalDetails[input.name]}
-                                    onChange={textareaOnchange}
-                                />
-                            </label>
-                        ) : (
-                            <InputField
-                                key={input.id}
-                                {...input}
-                                value={personalDetails[input.name]}
-                                onChange={inputOnchange}
-                            />
-                        );
-                    }
-                })}
+            <form className="personalDetailsForm">
+                {personalDetailsData.map((input) => (
+                    <InputField
+                        key={input.id}
+                        {...input}
+                        value={personalDetails[input.name]}
+                        onChange={inputOnchange}
+                    />
+                ))}
             </form>
         </section>
     );

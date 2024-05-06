@@ -18,7 +18,12 @@ const InputField = (props) => {
     return (
         <div className={styles.inputField}>
             <label htmlFor={uniqueId}>
-                {label}:{required ? "*" : " (optional)"}
+                {label}:
+                {required ? (
+                    <span className={styles.isRequired}>*</span>
+                ) : (
+                    " (optional)"
+                )}
             </label>
             {type === "textarea" ? (
                 <textarea
