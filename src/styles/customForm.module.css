@@ -1,0 +1,31 @@
+.customForm {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.customForm button {
+    align-self: flex-start;
+    text-align: center;
+    background-color: transparent;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+    border: 1px solid rgb(68, 68, 68);
+    border-radius: 0.125rem;
+}
+.customForm > .deleteBtn {
+    display: flex;
+    align-items: center;
+    flex-basis: 1rem;
+}
+.customForm > div > .cancelBtn,
+.customForm > div > .submitBtn {
+    padding: 0.5rem 1.5rem;
+}
+.customForm > div > .cancelBtn {
+    margin-right: 1rem;
+}
+.customForm > div > .submitBtn {
+    border: none;
+    background: #187ff5;
+    color: white;
+}
