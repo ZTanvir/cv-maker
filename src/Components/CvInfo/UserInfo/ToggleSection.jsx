@@ -2,6 +2,7 @@
 // Show or hide section based on user click
 
 import { useState } from "react";
+import styles from "../../../styles/toggleSection.module.css";
 
 const ToggleSection = (props) => {
     const { sectionIcon, sectionName, children } = props;
@@ -13,9 +14,12 @@ const ToggleSection = (props) => {
     };
 
     return (
-        <div>
-            <button onClick={handleToggleSection}>
-                <span>
+        <div className={styles.toggleSection}>
+            <button
+                className={styles.toggleButton}
+                onClick={handleToggleSection}
+            >
+                <span className={styles.sectionNameIcon}>
                     {/* school */}
                     <span className="material-symbols-outlined">
                         {sectionIcon}
