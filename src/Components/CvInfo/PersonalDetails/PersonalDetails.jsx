@@ -1,6 +1,7 @@
 import { useState } from "react";
 import InputField from "../../InputField";
 import personalDetailsData from "./personalDetailsData";
+import styles from "../../../styles/personalDetails.module.css";
 
 const PersonalDetails = () => {
     const [personalDetails, setPersonalDetails] = useState({
@@ -19,9 +20,9 @@ const PersonalDetails = () => {
     };
 
     return (
-        <section className="">
-            <h3>Personal Details</h3>
-            <form className="personalDetailsForm">
+        <section className={styles.personalDetailSection}>
+            <h2>Personal Details</h2>
+            <form className={styles.personalDetailsForm}>
                 {personalDetailsData.map((input) => (
                     <InputField
                         key={input.id}

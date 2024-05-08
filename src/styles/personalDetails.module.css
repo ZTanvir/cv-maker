@@ -1,0 +1,13 @@
+.personalDetailSection {
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 0.75rem;
+}
+.personalDetailSection > h2 {
+    font-size: 1.875rem;
+}
+.personalDetailsForm {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}

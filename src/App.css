@@ -60,6 +60,11 @@ h6 {
 #__next {
     isolation: isolate;
 }
+
+body {
+    background-color: #ebecef;
+}
+
 .material-symbols-outlined {
     font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
