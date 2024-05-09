@@ -7,6 +7,7 @@ import { useState } from "react";
 import CustomForm from "./CustomForm";
 import Visibility from "./Visibility";
 import AddInfoButton from "./AddInfoButton";
+import styles from "../../../styles/instituteList.module.css";
 
 const ItemList = ({
     formData,
@@ -129,11 +130,14 @@ const ItemList = ({
         <section>
             <div className="instituteList">
                 {!hideSection && (
-                    <div className="listItem">
+                    <div className={styles.listItem}>
                         {/* Generate institute based on user data */}
                         {userData.length > 0
                             ? userData.map((item) => (
-                                  <div key={item.id}>
+                                  <div
+                                      className={styles.instituteName}
+                                      key={item.id}
+                                  >
                                       <span
                                           data-institute-id={item.id}
                                           onClick={handleInstituteInfo}

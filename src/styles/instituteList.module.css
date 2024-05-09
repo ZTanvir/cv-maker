@@ -1,0 +1,10 @@
+.instituteName {
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.25rem;
+    border-bottom: 5px solid #f3f4f6;
+    cursor: pointer;
+}
