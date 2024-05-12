@@ -9,17 +9,19 @@ import Visibility from "./Visibility";
 import AddInfoButton from "./AddInfoButton";
 import styles from "../../../styles/instituteList.module.css";
 
-const ItemList = ({
+const InstituteList = ({
     formData,
     formValuesObj,
     sectionTitle,
     userData,
     userCvData,
     updateCvData,
+    infoSectionTitle,
     addInstituteBtnName,
 }) => {
     const [formValues, setFormValues] = useState(formValuesObj);
     const [hideSection, setHideSection] = useState(false);
+    console.log(infoSectionTitle);
 
     // Update userdata with new value
     const handleSubmitForm = (event) => {
@@ -142,7 +144,7 @@ const ItemList = ({
                                           data-institute-id={item.id}
                                           onClick={handleInstituteInfo}
                                       >
-                                          {item.institute}
+                                          {item[infoSectionTitle]}
                                       </span>
                                       <Visibility
                                           id={item.id}
@@ -185,4 +187,4 @@ const ItemList = ({
         </section>
     );
 };
-export default ItemList;
+export default InstituteList;

@@ -10,13 +10,14 @@ import PersonalDetails from "./PersonalDetails/PersonalDetails";
 import CvData from "../CvData";
 import EducationFormData from "./UserInfo/FormData/EducationFormData";
 import ExperienceFormData from "./UserInfo/FormData/ExperienceFormData.js";
+import ContractFormData from "./UserInfo/FormData/ContractFormData.js";
 import { useState } from "react";
 import InstituteInfo from "./UserInfo/InstituteInfo.jsx";
 
 const CvInfo = () => {
     const cvInfo = CvData;
     const [cvData, setCvData] = useState(cvInfo);
-
+    console.log(cvData);
     return (
         <section className="cvInfo">
             <PersonalDetails />
@@ -26,6 +27,7 @@ const CvInfo = () => {
                 setCvData={setCvData}
                 sectionIcon="school"
                 sectionName="Education"
+                infoSectionTitle="institute"
             />
             <InstituteInfo
                 formData={ExperienceFormData}
@@ -33,6 +35,15 @@ const CvInfo = () => {
                 setCvData={setCvData}
                 sectionIcon="work"
                 sectionName="Experience"
+                infoSectionTitle="institute"
+            />
+            <InstituteInfo
+                formData={ContractFormData}
+                cvData={cvData}
+                setCvData={setCvData}
+                sectionIcon="contract"
+                sectionName="Contract"
+                infoSectionTitle="email"
             />
         </section>
     );

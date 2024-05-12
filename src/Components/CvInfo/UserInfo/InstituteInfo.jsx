@@ -12,6 +12,7 @@ const instituteInfo = ({
     setCvData,
     sectionIcon,
     sectionName,
+    infoSectionTitle,
 }) => {
     const sectionTitle = sectionName.toLowerCase();
     // InstituteData provided by user
@@ -29,6 +30,7 @@ const instituteInfo = ({
                     userCvData={cvData}
                     updateCvData={setCvData}
                     addInstituteBtnName={sectionName}
+                    infoSectionTitle={infoSectionTitle}
                 />
             </ToggleSection>
         </>

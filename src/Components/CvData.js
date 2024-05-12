@@ -35,5 +35,7 @@ const CvData = {
         },
     ],
     experience: [],
+    contract: [],
+    skill: [],
 };
 export default CvData;
