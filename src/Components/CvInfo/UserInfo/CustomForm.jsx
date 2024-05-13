@@ -21,6 +21,7 @@ const CustomForm = (props) => {
                     value={formValues[input.name]}
                     onChange={updateFormValue}
                     type={input.type}
+                    options={input.options}
                     {...input}
                 />
             ))}

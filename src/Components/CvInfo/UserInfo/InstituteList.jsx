@@ -21,7 +21,6 @@ const InstituteList = ({
 }) => {
     const [formValues, setFormValues] = useState(formValuesObj);
     const [hideSection, setHideSection] = useState(false);
-    console.log(infoSectionTitle);
 
     // Update userdata with new value
     const handleSubmitForm = (event) => {

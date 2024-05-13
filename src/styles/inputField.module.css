@@ -22,12 +22,16 @@
     line-height: 1;
     height: 2.25rem;
 }
+.inputField > select {
+    height: 2.25rem;
+}
 .inputField > textarea {
     resize: vertical;
     outline: none;
 }
 
 .inputField > input:focus,
-.inputField > textarea:focus {
+.inputField > textarea:focus,
+.inputField > select:focus {
     border-color: lightblue;
 }

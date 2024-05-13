@@ -9,12 +9,58 @@ const InputField = (props) => {
         onChange,
         rows,
         cols,
+        options,
         type,
         placeholder,
         name,
         required,
     } = props;
     const uniqueId = `${name}${inputId}`;
+    const renderFormField = (formType) => {
+        if (formType === "textarea") {
+            return (
+                <textarea
+                    id={uniqueId}
+                    name={name}
+                    rows={rows}
+                    cols={cols}
+                    required={true}
+                    value={value}
+                    onChange={onChange}
+                ></textarea>
+            );
+        } else if (type === "select") {
+            return (
+                <select
+                    id={uniqueId}
+                    value={value}
+                    name={name}
+                    onChange={onChange}
+                >
+                    {options.length > 0
+                        ? options.map((item) => (
+                              <option key={item.value} value={item.value}>
+                                  {item.label}
+                              </option>
+                          ))
+                        : null}
+                </select>
+            );
+        } else {
+            return (
+                <input
+                    id={uniqueId}
+                    type={type}
+                    placeholder={placeholder}
+                    name={name}
+                    required={required}
+                    value={value}
+                    onChange={onChange}
+                />
+            );
+        }
+    };
+
     return (
         <div className={styles.inputField}>
             <label htmlFor={uniqueId}>
@@ -25,27 +71,7 @@ const InputField = (props) => {
                     " (optional)"
                 )}
             </label>
-            {type === "textarea" ? (
-                <textarea
-                    id={uniqueId}
-                    name={name}
-                    rows={rows}
-                    cols={cols}
-                    required={true}
-                    value={value}
-                    onChange={onChange}
-                ></textarea>
-            ) : (
-                <input
-                    id={uniqueId}
-                    type={type}
-                    placeholder={placeholder}
-                    name={name}
-                    required={required}
-                    value={value}
-                    onChange={onChange}
-                />
-            )}
+            {renderFormField(type)}
         </div>
     );
 };
