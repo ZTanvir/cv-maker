@@ -19,6 +19,7 @@ import InstituteInfo from "./UserInfo/InstituteInfo.jsx";
 const CvInfo = () => {
     const cvInfo = CvData;
     const [cvData, setCvData] = useState(cvInfo);
+    console.log(cvData);
 
     return (
         <section className="cvInfo">

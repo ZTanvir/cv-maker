@@ -37,6 +37,13 @@ const CvData = {
             address: "Ut suscipit aliquid ",
         },
     ],
-    skills: [],
+    skills: [
+        {
+            id: "b4daf491-ca7f-42bb-8d51-4c2f61b62a46",
+            visibility: true,
+            skill: "Reiciendis labore si",
+            level: "4",
+        },
+    ],
 };
 export default CvData;
