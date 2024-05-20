@@ -1,21 +1,29 @@
 import { useRef, useState } from "react";
+import DefaultProfileImg from "../../assets/Images/placeholderProfileImg.jpg";
 
 const ProfilePicture = ({}) => {
-    const [profilePicture, setProfilePicture] = useState("");
-    const imageEl = useRef(null);
+    const [profilePicture, setProfilePicture] = useState(DefaultProfileImg);
+    const inputFileEl = useRef(null);
 
     const handleProfilePicture = (e) => {
         e.preventDefault();
-        console.log(profilePicture);
+        const uploadFile = inputFileEl.current.files[0];
+        console.log(uploadFile);
+        const cachedUrl = URL.createObjectURL(uploadFile);
+        console.log(cachedUrl);
+        setProfilePicture(cachedUrl);
     };
+    // Default image as a placeholder
+    // User can upload an image
+    // New image will be replace the old one
+
     return (
         <section>
+            <img src={profilePicture} alt="profile picture" />
+
             <form onSubmit={handleProfilePicture}>
                 <input
-                    value={profilePicture}
-                    onChange={(e) => {
-                        console.log(e.target.files[0]);
-                    }}
+                    ref={inputFileEl}
                     type="file"
                     name="profilePicture"
                     id="profileImage"
@@ -23,9 +31,6 @@ const ProfilePicture = ({}) => {
                 />
                 <button type="submit">Submit</button>
             </form>
-            <div>
-                <img src={profilePicture} alt="profile picture" />
-            </div>
         </section>
     );
 };
