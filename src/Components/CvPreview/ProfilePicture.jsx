@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import DefaultProfileImg from "../../assets/Images/placeholderProfileImg.jpg";
+import styles from "../../styles/profilePicture.module.css";
 
 const ProfilePicture = ({}) => {
     const [profilePicture, setProfilePicture] = useState(DefaultProfileImg);
@@ -7,10 +8,9 @@ const ProfilePicture = ({}) => {
 
     const handleProfilePicture = (e) => {
         e.preventDefault();
+        inputFileEl.current.click();
         const uploadFile = inputFileEl.current.files[0];
-        console.log(uploadFile);
         const cachedUrl = URL.createObjectURL(uploadFile);
-        console.log(cachedUrl);
         setProfilePicture(cachedUrl);
     };
     // Default image as a placeholder
@@ -19,7 +19,11 @@ const ProfilePicture = ({}) => {
 
     return (
         <section>
-            <img src={profilePicture} alt="profile picture" />
+            <img
+                className={styles.profileImage}
+                src={profilePicture}
+                alt="profile picture"
+            />
 
             <form onSubmit={handleProfilePicture}>
                 <input
@@ -29,7 +33,14 @@ const ProfilePicture = ({}) => {
                     id="profileImage"
                     accept="image/*"
                 />
-                <button type="submit">Submit</button>
+                <button type="button">
+                    <span className="material-symbols-outlined">upload</span>
+                </button>
+                <button
+                    className={styles.submitBtn}
+                    type="submit"
+                    hidden
+                ></button>
             </form>
         </section>
     );
