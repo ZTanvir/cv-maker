@@ -1,7 +1,31 @@
+.profileImageContainer {
+}
+.uploadImageForm > div {
+    --profileWidth: 200px;
+    --profileHeight: 200px;
+    position: relative;
+    width: var(--profileWidth);
+    height: var(--profileHeight);
+}
 .profileImage {
-    width: 200px;
-    height: 200px;
+    width: var(--profileWidth);
+    height: var(--profileWidth);
     object-fit: cover;
-    border: 1px solid red;
     border-radius: 50%;
+}
+
+.uploadImageForm > div:hover {
+    opacity: 0.5;
+}
+.uploadBtn {
+    position: absolute;
+    top: 93%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    padding: 10px 77px;
+    border: none;
+    border-radius: 6px;
+    z-index: 2;
+    background-color: rgba(231, 234, 235, 0.8);
+    cursor: pointer;
 }

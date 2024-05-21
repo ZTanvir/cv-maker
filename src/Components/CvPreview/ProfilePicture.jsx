@@ -1,46 +1,54 @@
 import { useRef, useState } from "react";
-import DefaultProfileImg from "../../assets/Images/placeholderProfileImg.jpg";
+import avatarPlaceHolder from "../../assets/Images/avatarPlaceHolder.png";
 import styles from "../../styles/profilePicture.module.css";
 
 const ProfilePicture = ({}) => {
-    const [profilePicture, setProfilePicture] = useState(DefaultProfileImg);
+    const [profilePicture, setProfilePicture] = useState(avatarPlaceHolder);
     const inputFileEl = useRef(null);
+
+    const handleUploadImg = (e) => {
+        inputFileEl.current.click();
+    };
 
     const handleProfilePicture = (e) => {
         e.preventDefault();
-        inputFileEl.current.click();
         const uploadFile = inputFileEl.current.files[0];
         const cachedUrl = URL.createObjectURL(uploadFile);
         setProfilePicture(cachedUrl);
     };
-    // Default image as a placeholder
-    // User can upload an image
-    // New image will be replace the old one
 
     return (
-        <section>
-            <img
-                className={styles.profileImage}
-                src={profilePicture}
-                alt="profile picture"
-            />
+        <section className={styles.profileImageContainer}>
+            <form
+                className={styles.uploadImageForm}
+                encType="multipart/form-data"
+            >
+                <div>
+                    <img
+                        className={styles.profileImage}
+                        src={profilePicture}
+                        alt="profile picture"
+                    />
+                    <button
+                        className={styles.uploadBtn}
+                        type="button"
+                        onClick={handleUploadImg}
+                    >
+                        <span className="material-symbols-outlined">
+                            upload
+                        </span>
+                    </button>
+                </div>
 
-            <form onSubmit={handleProfilePicture}>
                 <input
+                    onChange={handleProfilePicture}
                     ref={inputFileEl}
                     type="file"
                     name="profilePicture"
                     id="profileImage"
                     accept="image/*"
-                />
-                <button type="button">
-                    <span className="material-symbols-outlined">upload</span>
-                </button>
-                <button
-                    className={styles.submitBtn}
-                    type="submit"
                     hidden
-                ></button>
+                />
             </form>
         </section>
     );
