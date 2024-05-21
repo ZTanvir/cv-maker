@@ -1,8 +1,9 @@
 const CvData = {
     personal_details: {
-        full_name: "Josephine Meyers",
+        fname: "Josephine",
+        lname: "Mayers",
         profession: "Artist",
-        description:
+        jobSummary:
             "Engineers, as practitioners of engineering, are professionals who invent, design, analyze, build and test machines, complex systems, structures,",
     },
     education: [

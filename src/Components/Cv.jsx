@@ -6,7 +6,7 @@ import CvPreview from "./CvPreview/CvPreview";
 const Cv = () => {
     return (
         <section className="cv-maker">
-            {/* <CvInfo /> */}
+            <CvInfo />
             <CvPreview />
         </section>
     );

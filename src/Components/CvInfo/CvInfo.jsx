@@ -23,7 +23,7 @@ const CvInfo = () => {
 
     return (
         <section className="cvInfo">
-            <PersonalDetails />
+            <PersonalDetails cvData={cvData} updateCvData={setCvData} />
             <InstituteInfo
                 formData={EducationFormData}
                 cvData={cvData}

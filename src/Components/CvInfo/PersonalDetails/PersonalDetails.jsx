@@ -3,7 +3,7 @@ import InputField from "../../InputField";
 import personalDetailsData from "./personalDetailsData";
 import styles from "../../../styles/personalDetails.module.css";
 
-const PersonalDetails = () => {
+const PersonalDetails = ({ cvData, updateCvData }) => {
     const [personalDetails, setPersonalDetails] = useState({
         profession: "",
         fname: "",
@@ -16,6 +16,13 @@ const PersonalDetails = () => {
         setPersonalDetails({
             ...personalDetails,
             [event.target.name]: event.target.value,
+        });
+        updateCvData({
+            ...cvData,
+            personal_details: {
+                ...cvData.personal_details,
+                ...personalDetails,
+            },
         });
     };
 
