@@ -2,12 +2,16 @@
 // and how the information will look in the cv
 import CvInfo from "./CvInfo/CvInfo";
 import CvPreview from "./CvPreview/CvPreview";
+import cvInfo from "../Components/CvData.js";
+import { useState } from "react";
 
 const Cv = () => {
+    const [cvData, setCvData] = useState(cvInfo);
+
     return (
         <section className="cv-maker">
-            <CvInfo />
-            <CvPreview />
+            <CvInfo cvData={cvData} setCvData={setCvData} />
+            <CvPreview cvInfo={cvData} />
         </section>
     );
 };
