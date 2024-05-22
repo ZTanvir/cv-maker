@@ -19,7 +19,7 @@ const CvData = {
     ],
     experience: [
         {
-            id: "c4a0a49a-87d9-49b6-9ccd-75995a2b1866",
+            id: crypto.randomUUID(),
             visibility: true,
             institute: "Cochran Dawson Plc",
             designation: "Consequatur ex accus",
@@ -31,7 +31,7 @@ const CvData = {
     ],
     contract: [
         {
-            id: "ae4dfc30-95e5-457a-b7f8-ad2685af1f7b",
+            id: crypto.randomUUID(),
             visibility: true,
             phoneNumber: "+1 (195) 436-2106",
             email: "nohis@mailinator.com",
@@ -40,7 +40,7 @@ const CvData = {
     ],
     skills: [
         {
-            id: "b4daf491-ca7f-42bb-8d51-4c2f61b62a46",
+            id: crypto.randomUUID(),
             visibility: true,
             skill: "Reiciendis labore si",
             level: "4",
