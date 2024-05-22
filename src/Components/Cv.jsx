@@ -10,7 +10,7 @@ const Cv = () => {
 
     return (
         <section className="cv-maker">
-            <CvInfo cvData={cvData} setCvData={setCvData} />
+            {/* <CvInfo cvData={cvData} setCvData={setCvData} /> */}
             <CvPreview cvInfo={cvData} />
         </section>
     );
