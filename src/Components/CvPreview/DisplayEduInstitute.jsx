@@ -1,10 +1,14 @@
 const DisplayEduInstitute = ({ insituteInfo }) => {
+    const formateDate = (date) => date.split("-").join("/");
+    const startDate = formateDate(insituteInfo.startDate);
+    const endDate = formateDate(insituteInfo.startDate);
+
     return (
-        <section className={styles.eduInstituteInfo}>
+        <section>
             {insituteInfo.visibility ? (
                 <>
                     <p>
-                        {insituteInfo.startDate} - {insituteInfo.endDate}
+                        {startDate} - {endDate}
                     </p>
                     <p>{insituteInfo.degree}</p>
                     <p>{insituteInfo.institute}</p>

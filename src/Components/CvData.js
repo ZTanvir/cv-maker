@@ -16,6 +16,15 @@ const CvData = {
             location: "",
             visibility: true,
         },
+        {
+            id: crypto.randomUUID(),
+            institute: "London City University",
+            degree: "H.S.C",
+            startDate: "2014-02-09",
+            endDate: "2014-02-09",
+            location: "",
+            visibility: true,
+        },
     ],
     experience: [
         {
