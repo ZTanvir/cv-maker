@@ -1,11 +1,12 @@
-import styles from "../../styles/CvPreview/displayProfileDetails.module.css";
+import styles from "../../styles/CvPreview/displayProfileDescription.module.css";
 
 const DisplayProfileDescription = ({ cvData }) => {
     const jobSummary = cvData.personal_details.jobSummary;
 
     return (
-        <section>
+        <section className={styles.profileInfo}>
             <h2>Profile</h2>
+            <span className={styles.profileBgCircle}></span>
             <p>{jobSummary}</p>
         </section>
     );
