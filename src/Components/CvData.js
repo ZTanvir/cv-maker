@@ -31,11 +31,12 @@ const CvData = {
             id: crypto.randomUUID(),
             visibility: true,
             institute: "Cochran Dawson Plc",
-            designation: "Consequatur ex accus",
+            designation: "Senior product manager",
             startDate: "2008-06-23",
             endDate: "1975-09-21",
             location: "Consectetur voluptat",
-            description: "Ut voluptate soluta ",
+            description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis risus faucibus, ultricies arcu in, gravida metus. Nulla nulla ex, auctor id congue et, eleifend a libero.",
         },
     ],
     contract: [

@@ -1,0 +1,9 @@
+.companyContainer {
+}
+.companyInformation {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+.experienceRightSide {
+}

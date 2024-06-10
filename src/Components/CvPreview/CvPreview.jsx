@@ -2,6 +2,7 @@ import NameAndProfession from "./NameAndProfession";
 import ProfilePicture from "./ProfilePicture";
 import DisplayEduInstitutes from "./DisplayEduInstitutes";
 import DisplayProfileDescription from "./DisplayProfileDescription";
+import DisplayExperience from "./DisplayExperience";
 
 const CvPreview = ({ cvInfo }) => {
     return (
@@ -10,6 +11,7 @@ const CvPreview = ({ cvInfo }) => {
             <NameAndProfession cvData={cvInfo} />
             <DisplayEduInstitutes cvData={cvInfo} />
             <DisplayProfileDescription cvData={cvInfo} />
+            <DisplayExperience cvData={cvInfo} />
         </main>
     );
 };

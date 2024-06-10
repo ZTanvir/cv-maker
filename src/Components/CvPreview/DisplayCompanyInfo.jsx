@@ -1,3 +1,5 @@
+import styles from "../../styles/CvPreview/displayCompanyInfo.module.css";
+
 const DisplayCompanyInfo = ({ companyDetails }) => {
     const startDate = companyDetails.startDate;
     const endDate = companyDetails.endDate;
@@ -6,16 +8,16 @@ const DisplayCompanyInfo = ({ companyDetails }) => {
     const description = companyDetails.description;
 
     return (
-        <section>
+        <section className={styles.companyContainer}>
             {companyDetails.visibility ? (
-                <div>
-                    <div>
+                <div className={styles.companyInformation}>
+                    <div className={styles.leftSide}>
                         <p>
                             {startDate} - {endDate}
                         </p>
                         <p>{companyName}</p>
                     </div>
-                    <div>
+                    <div className={styles.experienceRightSide}>
                         <p>{designation}</p>
                         <p>{description}</p>
                     </div>
