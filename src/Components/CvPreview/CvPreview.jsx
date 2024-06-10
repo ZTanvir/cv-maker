@@ -4,6 +4,7 @@ import DisplayEduInstitutes from "./DisplayEduInstitutes";
 import DisplayProfileDescription from "./DisplayProfileDescription";
 import DisplayExperience from "./DisplayExperience";
 import DisplayContract from "./DisplayContract";
+import DisplaySkills from "./DisplaySkills";
 
 const CvPreview = ({ cvInfo }) => {
     return (
@@ -14,6 +15,7 @@ const CvPreview = ({ cvInfo }) => {
             <DisplayProfileDescription cvData={cvInfo} />
             <DisplayExperience cvData={cvInfo} />
             <DisplayContract cvData={cvInfo} />
+            <DisplaySkills cvData={cvInfo} />
         </main>
     );
 };

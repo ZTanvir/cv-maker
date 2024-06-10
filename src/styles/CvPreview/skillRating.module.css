@@ -1,0 +1,16 @@
+.skillSection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.ratingCircles {
+    display: flex;
+    gap: 5px;
+}
+.ratingCircle {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+}
