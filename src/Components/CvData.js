@@ -45,7 +45,7 @@ const CvData = {
             visibility: true,
             phoneNumber: "+1 (195) 436-2106",
             email: "nohis@mailinator.com",
-            address: "Ut suscipit aliquid ",
+            address: "Ut suscipit aliquid",
         },
     ],
     skills: [
