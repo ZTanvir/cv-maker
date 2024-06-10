@@ -1,3 +1,8 @@
+.companysInfo {
+}
+.companysInfo > h2 {
+    margin-bottom: 1rem;
+}
 .companyContainer {
 }
 .companyInformation {

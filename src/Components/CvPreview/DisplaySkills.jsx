@@ -28,7 +28,7 @@ const DisplaySkills = ({ cvData }) => {
     const skills = cvData.skills;
 
     return (
-        <section>
+        <section className={styles.skillsSection}>
             <h2>Skills</h2>
             {skills.map((skill) => (
                 <SkillRating
