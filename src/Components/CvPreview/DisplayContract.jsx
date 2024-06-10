@@ -6,22 +6,24 @@ const DisplayContract = ({ cvData }) => {
     return (
         <section className={styles.contractInfo}>
             <h2>Contact</h2>
-            {contact.map((item) => (
-                <div className={styles.contactList} key={item.id}>
-                    <div>
-                        <p>Phone</p>
-                        <p>{item.phoneNumber}</p>
+            {contact.map((item) =>
+                item.visibility === true ? (
+                    <div className={styles.contactList} key={item.id}>
+                        <div>
+                            <p>Phone</p>
+                            <p>{item.phoneNumber}</p>
+                        </div>
+                        <div>
+                            <p>Email</p>
+                            <p>{item.email}</p>
+                        </div>
+                        <div>
+                            <p>Address</p>
+                            <p>{item.address}</p>
+                        </div>
                     </div>
-                    <div>
-                        <p>Email</p>
-                        <p>{item.email}</p>
-                    </div>
-                    <div>
-                        <p>Address</p>
-                        <p>{item.address}</p>
-                    </div>
-                </div>
-            ))}
+                ) : null
+            )}
         </section>
     );
 };
