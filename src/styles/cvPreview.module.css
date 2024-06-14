@@ -1,0 +1,37 @@
+.cvPreview {
+  width: 100%;
+  padding: 5rem;
+  background-color: goldenrod;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  --side-gap: 3rem;
+}
+
+.cvPreviewHeader {
+  display: flex;
+}
+.cvPreviewHeaderLeft {
+  flex-basis: 30%;
+}
+.cvPreviewHeaderRight {
+  flex-basis: 70%;
+}
+
+.cvPreviewMain {
+  display: flex;
+}
+
+.cvPreviewLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  flex-basis: 30%;
+}
+
+.cvPreviewRight {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  flex-basis: 70%;
+}

@@ -61,6 +61,11 @@ h6 {
     isolation: isolate;
 }
 
+:root{
+  --color-yellow:#F6D44D;
+}
+
+
 body {
     background-color: #ebecef;
 }

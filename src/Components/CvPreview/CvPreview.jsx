@@ -5,18 +5,31 @@ import DisplayProfileDescription from "./DisplayProfileDescription";
 import DisplayExperience from "./DisplayExperience";
 import DisplayContract from "./DisplayContract";
 import DisplaySkills from "./DisplaySkills";
+import styles from "../../styles/cvPreview.module.css";
 
 const CvPreview = ({ cvInfo }) => {
-    return (
-        <main>
-            <ProfilePicture />
-            <NameAndProfession cvData={cvInfo} />
-            <DisplayEduInstitutes cvData={cvInfo} />
-            <DisplayProfileDescription cvData={cvInfo} />
-            <DisplayExperience cvData={cvInfo} />
-            <DisplayContract cvData={cvInfo} />
-            <DisplaySkills cvData={cvInfo} />
-        </main>
-    );
+  return (
+    <main className={styles.cvPreview}>
+      <header className={styles.cvPreviewHeader}>
+        <section className={styles.cvPreviewHeaderLeft}>
+          <ProfilePicture />
+        </section>
+        <section className={styles.cvPreviewHeaderRight}>
+          <NameAndProfession cvData={cvInfo} />
+        </section>
+      </header>
+      <main className={styles.cvPreviewMain}>
+        <section className={styles.cvPreviewLeft}>
+          <DisplayEduInstitutes cvData={cvInfo} />
+          <DisplayContract cvData={cvInfo} />
+        </section>
+        <section className={styles.cvPreviewRight}>
+          <DisplayProfileDescription cvData={cvInfo} />
+          <DisplayExperience cvData={cvInfo} />
+          <DisplaySkills cvData={cvInfo} />
+        </section>
+      </main>
+    </main>
+  );
 };
 export default CvPreview;
