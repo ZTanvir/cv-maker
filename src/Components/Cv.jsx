@@ -4,15 +4,20 @@ import CvInfo from "./CvInfo/CvInfo";
 import CvPreview from "./CvPreview/CvPreview";
 import cvInfo from "../Components/CvData.js";
 import { useState } from "react";
+import styles from "../styles/cv.module.css";
 
 const Cv = () => {
-    const [cvData, setCvData] = useState(cvInfo);
+  const [cvData, setCvData] = useState(cvInfo);
 
-    return (
-        <section className="cv-maker">
-            {/* <CvInfo cvData={cvData} setCvData={setCvData} /> */}
-            <CvPreview cvInfo={cvData} />
-        </section>
-    );
+  return (
+    <section className={styles.cvContainer}>
+      <aside className={styles.cvInfoContainer}>
+        <CvInfo cvData={cvData} setCvData={setCvData} />
+      </aside>
+      <main className={styles.cvPreviewContainer}>
+        <CvPreview cvInfo={cvData} />
+      </main>
+    </section>
+  );
 };
 export default Cv;
