@@ -30,13 +30,15 @@ const DisplaySkills = ({ cvData }) => {
       <h2>Skills</h2>
       <div className="borderBottom"></div>
       <div className={styles.skillsRating}>
-        {skills.map((skill) => (
-          <SkillRating
-            key={crypto.randomUUID()}
-            skillName={skill.skill}
-            level={skill.level}
-          />
-        ))}
+        {skills.map((skill) =>
+          skill.visibility ? (
+            <SkillRating
+              key={crypto.randomUUID()}
+              skillName={skill.skill}
+              level={skill.level}
+            />
+          ) : null
+        )}
       </div>
     </section>
   );
