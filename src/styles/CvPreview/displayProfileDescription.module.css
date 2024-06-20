@@ -1,19 +1,19 @@
 .profileInfo {
-    position: relative;
+  position: relative;
 }
 .profileInfo > h2 {
-    margin-bottom: 1rem;
-    position: relative;
-    z-index: 2;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
 }
 .profileBgCircle {
-    display: inline-block;
-    position: absolute;
-    background-color: yellow;
-    z-index: 0;
-    width: 3rem;
-    height: 3rem;
-    top: -6px;
-    left: -19px;
-    border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  background-color: var(--cv-color);
+  z-index: 0;
+  width: 3rem;
+  height: 3rem;
+  top: -6px;
+  left: -19px;
+  border-radius: 50%;
 }

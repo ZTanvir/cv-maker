@@ -6,6 +6,7 @@ const DisplayExperience = ({ cvData }) => {
   return (
     <section className={styles.companysInfo}>
       <h2>Experience</h2>
+      <div className="borderBottom"></div>
       {companies.map((company) => (
         <DisplayCompanyInfo key={company.id} companyDetails={company} />
       ))}

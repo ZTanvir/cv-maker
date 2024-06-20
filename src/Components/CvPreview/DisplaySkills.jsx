@@ -11,7 +11,7 @@ const SkillRating = ({ skillName, level, bgColor }) => {
             key={crypto.randomUUID()}
             style={
               item <= level
-                ? { backgroundColor: "var(--color-yellow)" }
+                ? { backgroundColor: "var(--cv-color)" }
                 : { backgroundColor: "#E1E1E1" }
             }
             className={styles.ratingCircle}
@@ -28,6 +28,7 @@ const DisplaySkills = ({ cvData }) => {
   return (
     <section className={styles.skillsSection}>
       <h2>Skills</h2>
+      <div className="borderBottom"></div>
       <div className={styles.skillsRating}>
         {skills.map((skill) => (
           <SkillRating

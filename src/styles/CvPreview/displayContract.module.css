@@ -3,6 +3,7 @@
 .contractInfo > h2 {
   margin-bottom: 1rem;
 }
+
 .contactList {
   display: flex;
   flex-direction: column;

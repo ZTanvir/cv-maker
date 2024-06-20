@@ -6,6 +6,7 @@ const DisplayContract = ({ cvData }) => {
   return (
     <section className={styles.contractInfo}>
       <h2>Contact</h2>
+      <div className="borderBottom"></div>
       {contact.map((item) =>
         item.visibility === true ? (
           <div className={styles.contactList} key={item.id}>
