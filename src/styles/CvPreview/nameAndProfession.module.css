@@ -1,6 +1,8 @@
 .userNameAndProfession > h2 {
-    font-size: 3rem;
+  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
 }
 .userNameAndProfession > p {
-    font-size: 2rem;
+  font-size: 2rem;
 }

@@ -1,6 +1,6 @@
 const CvData = {
   personal_details: {
-    fname: "Josephine",
+    fname: "Josephine Ali",
     lname: "Mayers",
     profession: "Artist",
     jobSummary:
