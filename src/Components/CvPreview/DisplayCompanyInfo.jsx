@@ -32,7 +32,3 @@ const DisplayCompanyInfo = ({ companyDetails }) => {
   );
 };
 export default DisplayCompanyInfo;
-
-//C8:FF:28:39:DE:29
-//DA:A9:6A:97:74:62
-// DA-6C-A6-A2-EC-75	 tahsin
