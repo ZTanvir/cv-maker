@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "../../../styles/visibility.module.css";
 
 const Visibility = ({ id, isVisible, updateVisibilityInfo }) => {
     const [visibility, setVisibility] = useState(isVisible);
@@ -12,7 +13,7 @@ const Visibility = ({ id, isVisible, updateVisibilityInfo }) => {
 
     return (
         <span
-            className="material-symbols-outlined"
+            className={`material-symbols-outlined ${styles.showHideIcon}`}
             data-institute-id={id}
             title={visibility === true ? "Hide" : "Show"}
             onClick={handleVisibility}
