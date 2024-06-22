@@ -10,7 +10,7 @@ const Cv = () => {
   const [cvData, setCvData] = useState(cvInfo);
 
   return (
-    <section className={styles.cvContainer}>
+    <section className={styles.cvAppContainer}>
       <aside className={styles.cvInfoContainer}>
         <CvInfo cvData={cvData} setCvData={setCvData} />
       </aside>
