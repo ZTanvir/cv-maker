@@ -14,9 +14,12 @@ const ToggleSection = (props) => {
     };
 
     return (
-        <div className={styles.toggleSection}>
+        <section className={styles.toggleSection}>
             <button
                 className={styles.toggleButton}
+                style={
+                    isShown ? { marginBottom: "5px" } : { marginBottom: "0px" }
+                }
                 onClick={handleToggleSection}
             >
                 <span className={styles.sectionNameIcon}>
@@ -32,8 +35,10 @@ const ToggleSection = (props) => {
             </button>
 
             {/* hide or show this section when user click */}
-            {isShown === true ? <div>{children}</div> : null}
-        </div>
+            {isShown === true ? (
+                <div className={styles.toggleChild}>{children}</div>
+            ) : null}
+        </section>
     );
 };
 export default ToggleSection;

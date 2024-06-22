@@ -1,8 +1,8 @@
 .toggleSection {
-    border-radius: 0.75rem;
     display: flex;
     flex-direction: column;
-    background: #fff;
+    border-radius: 0.75rem;
+    overflow: hidden;
 }
 .toggleButton {
     background: #fff;
@@ -14,7 +14,6 @@
     align-items: center;
     flex-basis: 100%;
     padding: 2rem 1rem;
-    border-bottom: 5px solid #f3f4f6;
 }
 .toggleButton > .sectionNameIcon {
     display: flex;
@@ -22,4 +21,9 @@
     align-items: center;
     gap: 0.25rem;
     font-size: 1.5rem;
+}
+.toggleChild {
+    background-color: #fff;
+    border-bottom-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
 }
