@@ -11,12 +11,13 @@ import EducationFormData from "./UserInfo/FormData/EducationFormData";
 import ExperienceFormData from "./UserInfo/FormData/ExperienceFormData.js";
 import ContractFormData from "./UserInfo/FormData/ContractFormData.js";
 import SkillFormData from "./UserInfo/FormData/SkillFormData.js";
-
 import InstituteInfo from "./UserInfo/InstituteInfo.jsx";
+
+import styles from "../../styles/cvInfo.module.css";
 
 const CvInfo = ({ cvData, setCvData }) => {
     return (
-        <section className="cvInfo">
+        <section className={styles.cvInFo}>
             <PersonalDetails cvData={cvData} updateCvData={setCvData} />
             <InstituteInfo
                 formData={EducationFormData}
