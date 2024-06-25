@@ -5,13 +5,7 @@ import { useState } from "react";
 import styles from "../../../styles/toggleSection.module.css";
 
 const ToggleSection = (props) => {
-    const { sectionIcon, sectionName, children } = props;
-
-    const [isShown, setIsShown] = useState(false);
-
-    const handleToggleSection = (event) => {
-        setIsShown(!isShown);
-    };
+    const { sectionIcon, sectionName, children, isShown, handleToggle } = props;
 
     return (
         <section className={styles.toggleSection}>
@@ -20,7 +14,7 @@ const ToggleSection = (props) => {
                 style={
                     isShown ? { marginBottom: "5px" } : { marginBottom: "0px" }
                 }
-                onClick={handleToggleSection}
+                onClick={handleToggle}
             >
                 <span className={styles.sectionNameIcon}>
                     {/* school */}

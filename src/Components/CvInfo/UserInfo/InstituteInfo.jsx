@@ -13,6 +13,8 @@ const instituteInfo = ({
     sectionIcon,
     sectionName,
     infoSectionTitle,
+    activeIndex,
+    handleToggleSection,
 }) => {
     const sectionTitle = sectionName.toLowerCase();
     // InstituteData provided by user
@@ -21,7 +23,12 @@ const instituteInfo = ({
     const formvaluesobj = generateObjectFromArrayOfObject(formData, "name");
     return (
         <>
-            <ToggleSection sectionIcon={sectionIcon} sectionName={sectionName}>
+            <ToggleSection
+                sectionIcon={sectionIcon}
+                sectionName={sectionName}
+                isShown={activeIndex}
+                handleToggle={handleToggleSection}
+            >
                 <InstituteList
                     formData={formData}
                     formValuesObj={formvaluesobj}

@@ -14,8 +14,11 @@ import SkillFormData from "./UserInfo/FormData/SkillFormData.js";
 import InstituteInfo from "./UserInfo/InstituteInfo.jsx";
 
 import styles from "../../styles/cvInfo.module.css";
+import { useState } from "react";
 
 const CvInfo = ({ cvData, setCvData }) => {
+    const [activeIndex, setActiveIndex] = useState(false);
+
     return (
         <section className={styles.cvInFo}>
             <PersonalDetails cvData={cvData} updateCvData={setCvData} />
@@ -26,6 +29,12 @@ const CvInfo = ({ cvData, setCvData }) => {
                 sectionIcon="school"
                 sectionName="Education"
                 infoSectionTitle="institute"
+                activeIndex={activeIndex === 1}
+                handleToggleSection={(e) =>
+                    activeIndex === 1
+                        ? setActiveIndex(false)
+                        : setActiveIndex(1)
+                }
             />
             <InstituteInfo
                 formData={ExperienceFormData}
@@ -34,6 +43,12 @@ const CvInfo = ({ cvData, setCvData }) => {
                 sectionIcon="work"
                 sectionName="Experience"
                 infoSectionTitle="institute"
+                activeIndex={activeIndex === 2}
+                handleToggleSection={(e) =>
+                    activeIndex === 2
+                        ? setActiveIndex(false)
+                        : setActiveIndex(2)
+                }
             />
             <InstituteInfo
                 formData={ContractFormData}
@@ -42,6 +57,12 @@ const CvInfo = ({ cvData, setCvData }) => {
                 sectionIcon="contract"
                 sectionName="Contract"
                 infoSectionTitle="email"
+                activeIndex={activeIndex === 3}
+                handleToggleSection={(e) =>
+                    activeIndex === 3
+                        ? setActiveIndex(false)
+                        : setActiveIndex(3)
+                }
             />
             <InstituteInfo
                 formData={SkillFormData}
@@ -50,6 +71,12 @@ const CvInfo = ({ cvData, setCvData }) => {
                 sectionIcon="psychology"
                 sectionName="Skills"
                 infoSectionTitle="skill"
+                activeIndex={activeIndex === 4}
+                handleToggleSection={(e) =>
+                    activeIndex === 4
+                        ? setActiveIndex(false)
+                        : setActiveIndex(4)
+                }
             />
         </section>
     );
