@@ -38,3 +38,18 @@
   gap: 3rem;
   flex-basis: 70%;
 }
+/* When the browser is at maximum 566px */
+@media screen and (max-width: 35.375rem) {
+  .cvPreview {
+    padding: 2rem;
+  }
+  .cvPreviewHeader {
+    flex-direction: column;
+  }
+  .cvPreviewMain {
+    flex-direction: column;
+  }
+  .cvPreviewLeft {
+    order: 1;
+  }
+}
