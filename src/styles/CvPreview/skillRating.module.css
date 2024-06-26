@@ -43,3 +43,17 @@
     align-items: baseline;
   }
 }
+/* When the browser is at minimum 567 and maximum 1000px */
+
+@media screen and (min-width: 35.438rem) and (max-width: 62.5rem) {
+  .skillsSection {
+    margin-bottom: 2rem;
+  }
+  .skillSection {
+    gap: 0.5rem;
+  }
+  .skillsRating {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
