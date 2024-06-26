@@ -23,7 +23,7 @@ const DisplayCompanyInfo = ({ companyDetails }) => {
             <p className={styles.companyName}>{companyName}</p>
           </div>
           <div className={styles.experienceRightSide}>
-            <p>{designation}</p>
+            <p className={styles.designation}>{designation}</p>
             <p>{description}</p>
           </div>
         </div>

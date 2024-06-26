@@ -29,3 +29,9 @@
   background-color: rgba(231, 234, 235, 0.8);
   cursor: pointer;
 }
+/* When the browser is at maximum 566px */
+@media screen and (max-width: 35.375rem) {
+  .profileImageContainer {
+    margin-bottom: 2rem;
+  }
+}

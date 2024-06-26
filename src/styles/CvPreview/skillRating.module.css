@@ -29,3 +29,17 @@
   height: 13px;
   border-radius: 50%;
 }
+/* When the bowser is at maximum 566px */
+@media screen and (max-width: 35.375rem) {
+  .skillsSection {
+    margin-bottom: 2rem;
+  }
+  .skillsRating {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .skillSection {
+    align-items: baseline;
+  }
+}

@@ -51,5 +51,9 @@
   }
   .cvPreviewLeft {
     order: 1;
+    gap: 2rem;
+  }
+  .cvPreviewRight {
+    gap: 2rem;
   }
 }

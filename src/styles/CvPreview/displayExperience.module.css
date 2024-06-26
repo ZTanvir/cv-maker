@@ -32,7 +32,22 @@
 }
 .companyName {
 }
+.designation {
+  font-weight: bolder;
+}
 
 .experienceRightSide {
   flex-basis: 70%;
+}
+/* When the bowser is at maximum 566px */
+@media screen and (max-width: 35.375rem) {
+  .companyInformation {
+    flex-direction: column;
+    gap: 0rem;
+    margin-bottom: 2rem;
+  }
+
+  .jobTimeLines > div {
+    flex-basis: auto;
+  }
 }
