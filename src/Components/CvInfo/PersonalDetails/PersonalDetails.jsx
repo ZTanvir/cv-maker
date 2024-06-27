@@ -17,11 +17,18 @@ const PersonalDetails = ({ cvData, updateCvData }) => {
             ...personalDetails,
             [event.target.name]: event.target.value,
         });
+        // As react update data in next render
+        // To get the update data instant
+        let personalInfo = {
+            ...personalDetails,
+            [event.target.name]: event.target.value,
+        };
+
         updateCvData({
             ...cvData,
             personal_details: {
                 ...cvData.personal_details,
-                ...personalDetails,
+                ...personalInfo,
             },
         });
     };
