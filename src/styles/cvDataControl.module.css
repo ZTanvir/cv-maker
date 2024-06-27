@@ -1,7 +1,7 @@
 .cvDataControlContainer {
     display: flex;
     padding: 1rem 0.5rem;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 0.5rem;
     background-color: #ffffff;
     border-radius: 0.75rem;
