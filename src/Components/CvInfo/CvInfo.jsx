@@ -17,16 +17,9 @@ import CvDataControl from "../CvInfo/CvDataControl/CvDataControl.jsx";
 import styles from "../../styles/cvInfo.module.css";
 import { useState } from "react";
 
-const CvInfo = ({ cvData, setCvData }) => {
+const CvInfo = ({ cvData, setCvData, handleClearBtn, handleLoadBtn }) => {
     // Toggle section
     const [activeIndex, setActiveIndex] = useState(false);
-
-    const handleClearBtn = (e) => {
-        console.log("Clear Btn");
-    };
-    const handleLoadBtn = (e) => {
-        console.log("Load btn");
-    };
 
     return (
         <section className={styles.cvInFo}>
