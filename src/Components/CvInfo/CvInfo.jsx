@@ -12,15 +12,28 @@ import ExperienceFormData from "./UserInfo/FormData/ExperienceFormData.js";
 import ContractFormData from "./UserInfo/FormData/ContractFormData.js";
 import SkillFormData from "./UserInfo/FormData/SkillFormData.js";
 import InstituteInfo from "./UserInfo/InstituteInfo.jsx";
+import CvDataControl from "../CvInfo/CvDataControl/CvDataControl.jsx";
 
 import styles from "../../styles/cvInfo.module.css";
 import { useState } from "react";
 
 const CvInfo = ({ cvData, setCvData }) => {
+    // Toggle section
     const [activeIndex, setActiveIndex] = useState(false);
+
+    const handleClearBtn = (e) => {
+        console.log("Clear Btn");
+    };
+    const handleLoadBtn = (e) => {
+        console.log("Load btn");
+    };
 
     return (
         <section className={styles.cvInFo}>
+            <CvDataControl
+                handleClearBtn={handleClearBtn}
+                handleLoadBtn={handleLoadBtn}
+            />
             <PersonalDetails cvData={cvData} updateCvData={setCvData} />
             <InstituteInfo
                 formData={EducationFormData}
