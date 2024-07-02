@@ -7,15 +7,30 @@
     margin: 0 auto;
 }
 .cvInfoContainer {
-    flex-basis: 25%;
+    min-width: 25%;
 }
 .cvPreviewContainer {
-    flex-basis: 70%;
+    min-width: 70%;
 }
 /* When the browser is at maximum 566px */
 @media screen and (max-width: 35.375rem) {
     .cvAppContainer {
         flex-direction: column;
         gap: 2rem;
+    }
+}
+
+/* When the browser is at minimum 567 and maximum 1000px */
+
+@media screen and (min-width: 35.438rem) and (max-width: 62.5rem) {
+    .cvAppContainer {
+        gap: 3%;
+    }
+
+    .cvInfoContainer {
+        min-width: 35%;
+    }
+    .cvPreviewContainer {
+        min-width: 62%;
     }
 }
