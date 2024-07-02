@@ -36,6 +36,7 @@ const CvInfo = ({ cvData, setCvData, handleClearBtn, handleLoadBtn }) => {
             <CustomizeCv
                 handleContent={handleContent}
                 handleCustomization={handleCustomization}
+                displaySection={displaySection}
             />
             <CvDataControl
                 handleClearBtn={handleClearBtn}

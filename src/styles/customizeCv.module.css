@@ -20,3 +20,10 @@
     padding: 0.25rem;
     border-radius: 0.75rem;
 }
+[data-selected="true"] {
+    background-color: #ebecef;
+    color: #0e374e;
+}
+[data-selected="false"] {
+    background-color: #fff;
+}
