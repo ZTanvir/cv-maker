@@ -1,6 +1,7 @@
 .cvDataControlContainer {
     display: flex;
     padding: 1rem 0.5rem;
+    flex-wrap: wrap;
     justify-content: space-around;
     gap: 0.5rem;
     background-color: #ffffff;
@@ -15,7 +16,9 @@
 .loadBtn {
     background-color: #ebecef;
     padding: 0.25rem;
+    text-align: center;
 }
 :is(.clearBtn, .loadBtn) {
     cursor: pointer;
+    min-width: fit-content;
 }
