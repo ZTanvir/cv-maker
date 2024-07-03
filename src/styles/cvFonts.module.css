@@ -1,0 +1,65 @@
+.cvFontsContainer {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.75rem;
+}
+.cvFontsContainer h2 {
+    font-size: 1.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.cvFontsContainer button {
+    background: transparent;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.btnGroup {
+    display: flex;
+    gap: 0.5rem;
+}
+.btnGroup > button {
+    flex-grow: 1;
+}
+.robotoBtn {
+    font-family: "Roboto", sans-serif;
+}
+.merriWeatherBtn {
+    font-family: "Merriweather", sans-serif;
+}
+.firaSansBtn {
+    font-family: "Fira Sans", sans-serif;
+}
+.btnGroup > button .fontName {
+    font-size: 12px;
+}
+.btnGroup > button span:not(.fontName) {
+    font-size: 2rem;
+}
+/* When the browser is at maximum 566px */
+@media screen and (max-width: 35.375rem) {
+    .cvFontsContainer h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .btnGroup > button span:not(.fontName) {
+        font-size: 1.5rem;
+    }
+}
+
+/* When the browser is at minimum 567 and maximum 1000px */
+
+@media screen and (min-width: 35.438rem) and (max-width: 62.5rem) {
+    .cvFontsContainer h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .btnGroup > button span:not(.fontName) {
+        font-size: 1.5rem;
+    }
+}

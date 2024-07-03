@@ -14,6 +14,7 @@ import SkillFormData from "./UserInfo/FormData/SkillFormData.js";
 import InstituteInfo from "./UserInfo/InstituteInfo.jsx";
 import CvDataControl from "../CvInfo/CvDataControl/CvDataControl.jsx";
 import CustomizeCv from "./CustomizeCv/CustomizeCv.jsx";
+import CvFonts from "./CustomizeCv/CvFonts.jsx";
 
 import styles from "../../styles/cvInfo.module.css";
 import { useState } from "react";
@@ -102,7 +103,11 @@ const CvInfo = ({ cvData, setCvData, handleClearBtn, handleLoadBtn }) => {
                         }
                     />
                 </div>
-            ) : null}
+            ) : (
+                <div>
+                    <CvFonts />
+                </div>
+            )}
         </section>
     );
 };
