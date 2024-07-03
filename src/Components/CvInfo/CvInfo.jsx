@@ -19,7 +19,14 @@ import CvFonts from "./CustomizeCv/CvFonts.jsx";
 import styles from "../../styles/cvInfo.module.css";
 import { useState } from "react";
 
-const CvInfo = ({ cvData, setCvData, handleClearBtn, handleLoadBtn }) => {
+const CvInfo = ({
+    cvData,
+    setCvData,
+    handleClearBtn,
+    handleLoadBtn,
+    handleFontBtn,
+    cvFont,
+}) => {
     // Toggle section
     const [activeIndex, setActiveIndex] = useState(false);
 
@@ -105,7 +112,7 @@ const CvInfo = ({ cvData, setCvData, handleClearBtn, handleLoadBtn }) => {
                 </div>
             ) : (
                 <div>
-                    <CvFonts />
+                    <CvFonts handleFontBtn={handleFontBtn} cvFont={cvFont} />
                 </div>
             )}
         </section>

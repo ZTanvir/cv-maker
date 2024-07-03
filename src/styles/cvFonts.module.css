@@ -26,6 +26,10 @@
 .btnGroup > button {
     flex-grow: 1;
 }
+.btnGroup [data-cvFont="true"] {
+    background-color: #0e374e;
+    color: #fff;
+}
 .robotoBtn {
     font-family: "Roboto", sans-serif;
 }

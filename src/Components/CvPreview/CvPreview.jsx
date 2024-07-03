@@ -7,9 +7,12 @@ import DisplayContract from "./DisplayContract";
 import DisplaySkills from "./DisplaySkills";
 import styles from "../../styles/cvPreview.module.css";
 
-const CvPreview = ({ cvInfo }) => {
+const CvPreview = ({ cvInfo, cvFont }) => {
   return (
-    <main className={styles.cvPreview}>
+    <main
+      style={{ fontFamily: `${cvFont}, Times, serif` }}
+      className={styles.cvPreview}
+    >
       <header className={styles.cvPreviewHeader}>
         <section className={styles.cvPreviewHeaderLeft}>
           <ProfilePicture />

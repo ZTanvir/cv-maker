@@ -9,12 +9,18 @@ import styles from "../styles/cv.module.css";
 
 const Cv = () => {
     const [cvData, setCvData] = useState(filledCvData);
+    const [cvFont, setCvFont] = useState("Roboto");
 
     const handleClearBtn = (e) => {
         setCvData(emptyCvData);
     };
     const handleLoadBtn = (e) => {
         setCvData(filledCvData);
+    };
+    // CvFonts component btn
+    const handleFontBtn = (e) => {
+        const font = e.currentTarget.dataset["font"];
+        setCvFont(font);
     };
 
     return (
@@ -25,10 +31,12 @@ const Cv = () => {
                     setCvData={setCvData}
                     handleClearBtn={handleClearBtn}
                     handleLoadBtn={handleLoadBtn}
+                    handleFontBtn={handleFontBtn}
+                    cvFont={cvFont}
                 />
             </aside>
             <main className={styles.cvPreviewContainer}>
-                <CvPreview cvInfo={cvData} />
+                <CvPreview cvInfo={cvData} cvFont={cvFont} />
             </main>
         </section>
     );
