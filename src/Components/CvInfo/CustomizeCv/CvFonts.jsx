@@ -5,15 +5,15 @@ const CvFonts = () => {
             <div className="">
                 <button className="">
                     <span>Aa</span>
-                    <span>Serif</span>
+                    <span>Roboto</span>
                 </button>
                 <button>
-                    <span></span>
-                    <span></span>
+                    <span>Aa</span>
+                    <span>Merriweather</span>
                 </button>
                 <button>
-                    <span></span>
-                    <span></span>
+                    <span>Aa</span>
+                    <span>Fira Sans</span>
                 </button>
             </div>
         </section>
