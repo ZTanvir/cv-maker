@@ -8,7 +8,7 @@ const CvFonts = ({ handleFontBtn, cvFont }) => {
                 <button
                     onClick={handleFontBtn}
                     data-font="Roboto"
-                    data-cvFont={cvFont === "Roboto"}
+                    data-cvfont={cvFont === "Roboto"}
                     className={styles.robotoBtn}
                 >
                     <span>Aa</span>
@@ -17,7 +17,7 @@ const CvFonts = ({ handleFontBtn, cvFont }) => {
                 <button
                     onClick={handleFontBtn}
                     data-font="Merriweather"
-                    data-cvFont={cvFont === "Merriweather"}
+                    data-cvfont={cvFont === "Merriweather"}
                     className={styles.merriWeatherBtn}
                 >
                     <span>Aa</span>
@@ -26,7 +26,7 @@ const CvFonts = ({ handleFontBtn, cvFont }) => {
                 <button
                     onClick={handleFontBtn}
                     data-font="Fira Sans"
-                    data-cvFont={cvFont === "Fira Sans"}
+                    data-cvfont={cvFont === "Fira Sans"}
                     className={styles.firaSansBtn}
                 >
                     <span>Aa</span>
