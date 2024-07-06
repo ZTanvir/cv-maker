@@ -4,33 +4,33 @@ const CvFonts = ({ handleFontBtn, cvFont }) => {
     return (
         <section className={styles.cvFontsContainer}>
             <h2>Fonts</h2>
-            <div className={styles.btnGroup}>
+            <div classname={styles.btngroup}>
                 <button
-                    onClick={handleFontBtn}
-                    data-font="Roboto"
-                    data-cvfont={cvFont === "Roboto"}
-                    className={styles.robotoBtn}
+                    onclick={handlefontbtn}
+                    data-font="roboto"
+                    data-cvfont={cvfont === "roboto"}
+                    classname={styles.robotobtn}
                 >
-                    <span>Aa</span>
-                    <span className={styles.fontName}>Roboto</span>
+                    <span>aa</span>
+                    <span classname={styles.fontname}>roboto</span>
                 </button>
                 <button
-                    onClick={handleFontBtn}
-                    data-font="Merriweather"
-                    data-cvfont={cvFont === "Merriweather"}
-                    className={styles.merriWeatherBtn}
+                    onclick={handlefontbtn}
+                    data-font="merriweather"
+                    data-cvfont={cvfont === "merriweather"}
+                    classname={styles.merriweatherbtn}
                 >
-                    <span>Aa</span>
-                    <span className={styles.fontName}>Merriweather</span>
+                    <span>aa</span>
+                    <span classname={styles.fontname}>merriweather</span>
                 </button>
                 <button
-                    onClick={handleFontBtn}
-                    data-font="Fira Sans"
-                    data-cvfont={cvFont === "Fira Sans"}
-                    className={styles.firaSansBtn}
+                    onclick={handlefontbtn}
+                    data-font="fira sans"
+                    data-cvfont={cvfont === "fira sans"}
+                    classname={styles.firasansbtn}
                 >
-                    <span>Aa</span>
-                    <span className={styles.fontName}>Fira Sans</span>
+                    <span>aa</span>
+                    <span classname={styles.fontname}>fira sans</span>
                 </button>
             </div>
         </section>

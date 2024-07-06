@@ -18,6 +18,7 @@ import CvFonts from "./CustomizeCv/CvFonts.jsx";
 
 import styles from "../../styles/cvInfo.module.css";
 import { useState } from "react";
+import CustomizeColor from "./CustomizeCv/CustomizeColor.jsx";
 
 const CvInfo = ({
     cvData,
@@ -113,6 +114,7 @@ const CvInfo = ({
             ) : (
                 <div>
                     <CvFonts handleFontBtn={handleFontBtn} cvFont={cvFont} />
+                    <CustomizeColor />
                 </div>
             )}
         </section>
