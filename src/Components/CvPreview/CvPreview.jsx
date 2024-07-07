@@ -7,10 +7,13 @@ import DisplayContract from "./DisplayContract";
 import DisplaySkills from "./DisplaySkills";
 import styles from "../../styles/cvPreview.module.css";
 
-const CvPreview = ({ cvInfo, cvFont }) => {
+const CvPreview = ({ cvInfo, cvFont, cvColor }) => {
     return (
         <main
-            style={{ fontFamily: `${cvFont}, Times, serif` }}
+            style={{
+                fontFamily: `${cvFont}, Times, serif`,
+                "--cv-color": cvColor,
+            }}
             className={styles.cvPreview}
         >
             <header className={styles.cvPreviewHeader}>

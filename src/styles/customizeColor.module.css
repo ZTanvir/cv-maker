@@ -1,0 +1,22 @@
+.CustomizeColorContainer {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.75rem;
+}
+.CustomizeColorContainer > h2 {
+    font-size: 1.875rem;
+    margin-bottom: 0.5rem;
+}
+.colorsGroup {
+    display: flex;
+    gap: 0.5rem;
+}
+.colorsGroup > button {
+    min-width: 2rem;
+    min-height: 2rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.colorsGroup [data-colorcode*="true"] {
+    border-color: rgb(68, 66, 66);
+}

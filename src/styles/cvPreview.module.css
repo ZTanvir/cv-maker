@@ -1,75 +1,75 @@
 .cvPreview {
-  width: 100%;
-  padding: 5rem;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  --shadow-color: 286deg 36% 56%;
-  box-shadow: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
-    0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
-    1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
+    width: 100%;
+    padding: 5rem;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    --shadow-color: 286deg 36% 56%;
+    box-shadow: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+        0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
+        1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
 
-  --section-gap: 2rem;
-  /* color: #0c0c0c;
+    --section-gap: 2rem;
+    /* color: #0c0c0c;
   color: #0b1215;
   color: #352f36; */
-  color: #101720;
+    color: #101720;
 }
 
 .cvPreviewHeader {
-  display: flex;
-  gap: var(--section-gap, 2rem);
+    display: flex;
+    gap: var(--section-gap, 2rem);
 }
 .cvPreviewHeaderLeft {
-  flex-basis: 30%;
+    flex-basis: 30%;
 }
 .cvPreviewHeaderRight {
-  flex-basis: 70%;
+    flex-basis: 70%;
 }
 
 .cvPreviewMain {
-  display: flex;
-  gap: var(--section-gap, 2rem);
-  --gap-left-right: 2rem;
+    display: flex;
+    gap: var(--section-gap, 2rem);
+    --gap-left-right: 2rem;
 }
 
 .cvPreviewLeft {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-left-right, 2rem);
-  flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-left-right, 2rem);
+    flex-basis: 30%;
 }
 
 .cvPreviewRight {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-left-right, 2rem);
-  flex-basis: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-left-right, 2rem);
+    flex-basis: 70%;
 }
 /* When the browser is at maximum 566px */
 @media screen and (max-width: 35.375rem) {
-  .cvPreview {
-    padding: 2rem;
-  }
-  .cvPreviewHeader {
-    flex-direction: column;
-  }
-  .cvPreviewMain {
-    flex-direction: column;
-  }
-  .cvPreviewLeft {
-    order: 1;
-    gap: 2rem;
-  }
-  .cvPreviewRight {
-    gap: 2rem;
-  }
+    .cvPreview {
+        padding: 2rem;
+    }
+    .cvPreviewHeader {
+        flex-direction: column;
+    }
+    .cvPreviewMain {
+        flex-direction: column;
+    }
+    .cvPreviewLeft {
+        order: 1;
+        gap: 2rem;
+    }
+    .cvPreviewRight {
+        gap: 2rem;
+    }
 }
 /* When the browser is at minimum 567 and maximum 1000px */
 
 @media screen and (min-width: 35.438rem) and (max-width: 62.5rem) {
-  .cvPreview {
-    padding: 3rem;
-  }
+    .cvPreview {
+        padding: 3rem;
+    }
 }

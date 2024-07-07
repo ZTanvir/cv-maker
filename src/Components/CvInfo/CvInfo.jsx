@@ -27,6 +27,8 @@ const CvInfo = ({
     handleLoadBtn,
     handleFontBtn,
     cvFont,
+    handleColorBtn,
+    cvColor,
 }) => {
     // Toggle section
     const [activeIndex, setActiveIndex] = useState(false);
@@ -114,7 +116,10 @@ const CvInfo = ({
             ) : (
                 <div>
                     <CvFonts handleFontBtn={handleFontBtn} cvFont={cvFont} />
-                    {/* <CustomizeColor /> */}
+                    <CustomizeColor
+                        handleColorBtn={handleColorBtn}
+                        cvColor={cvColor}
+                    />
                 </div>
             )}
         </section>

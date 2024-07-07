@@ -9,7 +9,8 @@ import styles from "../styles/cv.module.css";
 
 const Cv = () => {
     const [cvData, setCvData] = useState(filledCvData);
-    const [cvFont, setCvFont] = useState("Roboto");
+    const [cvFont, setCvFont] = useState("Merriweather");
+    const [cvColor, setCvColor] = useState("#CDB4DB");
 
     const handleClearBtn = (e) => {
         setCvData(emptyCvData);
@@ -23,6 +24,12 @@ const Cv = () => {
         font = font.split(";")[0];
         setCvFont(font);
     };
+    // CustomizeColor components color btn
+    const handleColorBtn = (e) => {
+        let cvColor = e.currentTarget.dataset["colorcode"];
+        cvColor = cvColor.split(";")[0];
+        setCvColor(cvColor);
+    };
 
     return (
         <section className={styles.cvAppContainer}>
@@ -34,10 +41,12 @@ const Cv = () => {
                     handleLoadBtn={handleLoadBtn}
                     handleFontBtn={handleFontBtn}
                     cvFont={cvFont}
+                    handleColorBtn={handleColorBtn}
+                    cvColor={cvColor}
                 />
             </aside>
             <main className={styles.cvPreviewContainer}>
-                <CvPreview cvInfo={cvData} cvFont={cvFont} />
+                <CvPreview cvInfo={cvData} cvFont={cvFont} cvColor={cvColor} />
             </main>
         </section>
     );
