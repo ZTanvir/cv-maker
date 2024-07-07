@@ -19,7 +19,8 @@ const Cv = () => {
     };
     // CvFonts component btn
     const handleFontBtn = (e) => {
-        const font = e.currentTarget.dataset["font"];
+        let font = e.currentTarget.dataset["cvfont"];
+        font = font.split(";")[0];
         setCvFont(font);
     };
 

@@ -114,7 +114,7 @@ const CvInfo = ({
             ) : (
                 <div>
                     <CvFonts handleFontBtn={handleFontBtn} cvFont={cvFont} />
-                    <CustomizeColor />
+                    {/* <CustomizeColor /> */}
                 </div>
             )}
         </section>

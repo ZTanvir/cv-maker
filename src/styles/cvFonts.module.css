@@ -26,7 +26,7 @@
 .btnGroup > button {
     flex-grow: 1;
 }
-.btnGroup [data-cvfont="true"] {
+.btnGroup [data-cvfont*="true"] {
     background-color: #0e374e;
     color: #fff;
 }
