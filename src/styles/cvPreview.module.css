@@ -22,10 +22,10 @@
     gap: var(--section-gap, 2rem);
 }
 .cvPreviewHeaderLeft {
-    flex-basis: 30%;
+    min-width: 30%;
 }
 .cvPreviewHeaderRight {
-    flex-basis: 70%;
+    min-width: 60%;
 }
 
 .cvPreviewMain {
@@ -38,14 +38,14 @@
     display: flex;
     flex-direction: column;
     gap: var(--gap-left-right, 2rem);
-    flex-basis: 30%;
+    min-width: 30%;
 }
 
 .cvPreviewRight {
     display: flex;
     flex-direction: column;
     gap: var(--gap-left-right, 2rem);
-    flex-basis: 70%;
+    min-width: 60%;
 }
 /* When the browser is at maximum 566px */
 @media screen and (max-width: 35.375rem) {
@@ -70,6 +70,25 @@
 
 @media screen and (min-width: 35.438rem) and (max-width: 62.5rem) {
     .cvPreview {
-        padding: 3rem;
+        padding: 2rem;
+    }
+    .cvPreviewHeaderLeft {
+        min-width: 30%;
+    }
+    .cvPreviewHeaderRight {
+        min-width: 70%;
+    }
+    .cvPreviewLeft {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-left-right, 2rem);
+        min-width: 30%;
+    }
+
+    .cvPreviewRight {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-left-right, 2rem);
+        min-width: 60%;
     }
 }
