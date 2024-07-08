@@ -9,11 +9,10 @@
 import CvInfoContent from "./CvInfoContent.jsx";
 import CvDataControl from "../CvInfo/CvDataControl/CvDataControl.jsx";
 import CustomizeCv from "./CustomizeCv/CustomizeCv.jsx";
+import CvInfoCustomization from "./CvInfoCustomization.jsx";
 
 import styles from "../../styles/cvInfo.module.css";
 import { useState } from "react";
-import CustomizeColor from "./CustomizeCv/CustomizeColor.jsx";
-import CvFonts from "./CustomizeCv/CvFonts.jsx";
 
 const CvInfo = ({
     cvData,
@@ -51,8 +50,9 @@ const CvInfo = ({
                 </div>
             ) : (
                 <div className={styles.customizeCvSection}>
-                    <CvFonts handleFontBtn={handleFontBtn} cvFont={cvFont} />
-                    <CustomizeColor
+                    <CvInfoCustomization
+                        handleFontBtn={handleFontBtn}
+                        cvFont={cvFont}
                         handleColorBtn={handleColorBtn}
                         cvColor={cvColor}
                     />

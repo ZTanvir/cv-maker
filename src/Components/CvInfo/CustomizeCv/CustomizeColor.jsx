@@ -27,7 +27,7 @@ const CustomizeColor = ({ cvColor, handleColorBtn }) => {
             value: "#A2D2FF",
         },
     ];
-    console.log(cvColor);
+
     return (
         <section className={styles.CustomizeColorContainer}>
             <h2>Colors</h2>
