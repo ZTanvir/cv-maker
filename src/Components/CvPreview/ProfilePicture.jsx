@@ -4,6 +4,8 @@ import styles from "../../styles/profilePicture.module.css";
 
 const ProfilePicture = ({}) => {
     const [profilePicture, setProfilePicture] = useState(avatarPlaceHolder);
+    const [visibilityBtn, setVisibilityBtn] = useState(false);
+
     const inputFileEl = useRef(null);
 
     const handleUploadImg = (e) => {
@@ -17,8 +19,18 @@ const ProfilePicture = ({}) => {
         setProfilePicture(cachedUrl);
     };
 
+    const handleMouseOver = () => {
+        setVisibilityBtn(true);
+    };
+    const handleMouseLeave = () => {
+        setVisibilityBtn(false);
+    };
     return (
-        <section className={styles.profileImageContainer}>
+        <section
+            onMouseOver={handleMouseOver}
+            onMouseLeave={handleMouseLeave}
+            className={styles.profileImageContainer}
+        >
             <form
                 className={styles.uploadImageForm}
                 encType="multipart/form-data"
@@ -29,15 +41,18 @@ const ProfilePicture = ({}) => {
                         src={profilePicture}
                         alt="profile picture"
                     />
-                    <button
-                        className={styles.uploadBtn}
-                        type="button"
-                        onClick={handleUploadImg}
-                    >
-                        <span className="material-symbols-outlined">
-                            upload
-                        </span>
-                    </button>
+                    {visibilityBtn ? (
+                        <button
+                            title="Upload new image"
+                            className={styles.uploadBtn}
+                            type="button"
+                            onClick={handleUploadImg}
+                        >
+                            <span className="material-symbols-outlined">
+                                upload
+                            </span>
+                        </button>
+                    ) : null}
                 </div>
 
                 <input
