@@ -21,9 +21,14 @@ export const getMonthYearFromDate = (sampleDate) => {
     "November",
     "December",
   ];
-  const d = new Date(sampleDate);
-  const year = d.getFullYear();
-  const month = monthNames[d.getMonth()];
-
-  return `${month} ${year}`;
+  try {
+    const d = new Date(sampleDate);
+    const year = d.getFullYear();
+    const month = monthNames[d.getMonth()];
+    // return RangeError : invalid date
+    d.toISOString();
+    return `${month} ${year}`;
+  } catch (error) {
+    return `Ongoing`;
+  }
 };

@@ -1,6 +1,6 @@
 const filledCvData = {
     personal_details: {
-        fname: "Josephine Ali",
+        fname: "Josephine",
         lname: "Mayers",
         profession: "Front end developer",
         jobSummary:
@@ -10,7 +10,7 @@ const filledCvData = {
         {
             id: crypto.randomUUID(),
             institute: "University of Oxford",
-            degree: "MS in CSE",
+            degree: "MS in C.S.E",
             startDate: "2023-01-01",
             endDate: "",
             location: "",
@@ -36,18 +36,18 @@ const filledCvData = {
             endDate: "",
             location: "Atlanta",
             description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis risus faucibus, ultricies arcu in, gravida metus. Nulla nulla ex, auctor id congue et, eleifend a libero.",
+                "Building user interfaces with React.Working with the Web Development Ecosystem.Optimizing Performance and Experience.",
         },
         {
             id: crypto.randomUUID(),
             visibility: true,
-            institute: "Cochran Dawson Plc",
-            designation: "Senior product manager",
-            startDate: "2008-06-23",
-            endDate: "1975-09-21",
-            location: "Consectetur voluptat",
+            institute: "Nvidia",
+            designation: "Web Designer",
+            startDate: "2022-01-01",
+            endDate: "2023-12-31",
+            location: "Santa Clara, California",
             description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis risus faucibus, ultricies arcu in, gravida metus. Nulla nulla ex, auctor id congue et, eleifend a libero.",
+                "Collaborate with clients and stakeholders to understand their brand identity, target audience, and website goals.Collaborate with back-end developers for API and database integration.Optimize website performance and troubleshoot front-end issues.",
         },
     ],
     contract: [
@@ -55,33 +55,33 @@ const filledCvData = {
             id: crypto.randomUUID(),
             visibility: true,
             phoneNumber: "+1 (195) 436-2106",
-            email: "nohis@mailinator.com",
-            address: "Ut suscipit aliquid",
+            email: "josephine@gmail.com",
+            address: "Suite 885 7537 Kuhn Lights, Deckowton, TX 02552-6954",
         },
     ],
     skills: [
         {
             id: crypto.randomUUID(),
             visibility: true,
-            skill: "Photoshop",
+            skill: "React",
             level: "4",
         },
         {
             id: crypto.randomUUID(),
             visibility: true,
-            skill: "Indesign",
+            skill: "Redux",
             level: "3",
         },
         {
             id: crypto.randomUUID(),
             visibility: true,
-            skill: "Illustrator",
+            skill: "Playwright",
             level: "3",
         },
         {
             id: crypto.randomUUID(),
             visibility: true,
-            skill: "After Effects",
+            skill: "Tailwind",
             level: "2",
         },
     ],

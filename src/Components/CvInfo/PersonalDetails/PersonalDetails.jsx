@@ -10,11 +10,11 @@ const PersonalDetails = ({
     loadPersonalDetailsForm,
 }) => {
     const [personalDetails, setPersonalDetails] = useState({
-        fname: "Josephine Ali",
+        fname: "Josephine",
         lname: "Mayers",
-        profession: "Artist",
+        profession: "Front end developer",
         jobSummary:
-            "Engineers, as practitioners of engineering, are professionals who invent, design, analyze, build and test machines, complex systems, structures,",
+            "As a Front-End Developer, I am the architect of your website's user experience. I also translate designs into clean, functional code using HTML, CSS, and JavaScript",
     });
 
     const handleClearBtn = () => {
@@ -28,11 +28,11 @@ const PersonalDetails = ({
 
     const handleLoadBtn = () => {
         setPersonalDetails({
-            fname: "Josephine Ali",
+            fname: "Josephine",
             lname: "Mayers",
-            profession: "Artist",
+            profession: "Front end developer",
             jobSummary:
-                "Engineers, as practitioners of engineering, are professionals who invent, design, analyze, build and test machines, complex systems, structures,",
+                "As a Front-End Developer, I am the architect of your website's user experience. I also translate designs into clean, functional code using HTML, CSS, and JavaScript",
         });
     };
     // save user input from profession,first name,last name
