@@ -3,14 +3,38 @@ import InputField from "../../InputField";
 import personalDetailsData from "./personalDetailsData";
 import styles from "../../../styles/personalDetails.module.css";
 
-const PersonalDetails = ({ cvData, updateCvData }) => {
+const PersonalDetails = ({
+    cvData,
+    updateCvData,
+    resetPersonalDetailsForm,
+    loadPersonalDetailsForm,
+}) => {
     const [personalDetails, setPersonalDetails] = useState({
-        profession: "",
-        fname: "",
-        lname: "",
-        jobSummary: "",
+        fname: "Josephine Ali",
+        lname: "Mayers",
+        profession: "Artist",
+        jobSummary:
+            "Engineers, as practitioners of engineering, are professionals who invent, design, analyze, build and test machines, complex systems, structures,",
     });
 
+    const handleClearBtn = () => {
+        setPersonalDetails({
+            fname: "",
+            lname: "",
+            profession: "",
+            jobSummary: "",
+        });
+    };
+
+    const handleLoadBtn = () => {
+        setPersonalDetails({
+            fname: "Josephine Ali",
+            lname: "Mayers",
+            profession: "Artist",
+            jobSummary:
+                "Engineers, as practitioners of engineering, are professionals who invent, design, analyze, build and test machines, complex systems, structures,",
+        });
+    };
     // save user input from profession,first name,last name
     const inputOnchange = (event) => {
         setPersonalDetails({
@@ -46,6 +70,20 @@ const PersonalDetails = ({ cvData, updateCvData }) => {
                     />
                 ))}
             </form>
+            <button
+                ref={resetPersonalDetailsForm}
+                onClick={handleClearBtn}
+                hidden
+            >
+                Clear
+            </button>
+            <button
+                ref={loadPersonalDetailsForm}
+                onClick={handleLoadBtn}
+                hidden
+            >
+                Load
+            </button>
         </section>
     );
 };

@@ -23,6 +23,8 @@ const CvInfo = ({
     cvFont,
     handleColorBtn,
     cvColor,
+    resetPersonalDetailsForm,
+    loadPersonalDetailsForm,
 }) => {
     const [displaySection, setDisplaySection] = useState("content");
 
@@ -46,7 +48,12 @@ const CvInfo = ({
             />
             {Boolean(displaySection === "content") ? (
                 <div className={styles.cvInFo}>
-                    <CvInfoContent cvData={cvData} setCvData={setCvData} />
+                    <CvInfoContent
+                        cvData={cvData}
+                        setCvData={setCvData}
+                        resetPersonalDetailsForm={resetPersonalDetailsForm}
+                        loadPersonalDetailsForm={loadPersonalDetailsForm}
+                    />
                 </div>
             ) : (
                 <div className={styles.customizeCvSection}>

@@ -6,12 +6,22 @@ import ContractFormData from "./UserInfo/FormData/ContractFormData.js";
 import SkillFormData from "./UserInfo/FormData/SkillFormData.js";
 import { useState } from "react";
 
-const CvInfoContent = ({ cvData, setCvData }) => {
+const CvInfoContent = ({
+    cvData,
+    setCvData,
+    resetPersonalDetailsForm,
+    loadPersonalDetailsForm,
+}) => {
     // Toggle section
     const [activeIndex, setActiveIndex] = useState(false);
     return (
         <>
-            <PersonalDetails cvData={cvData} updateCvData={setCvData} />
+            <PersonalDetails
+                cvData={cvData}
+                updateCvData={setCvData}
+                resetPersonalDetailsForm={resetPersonalDetailsForm}
+                loadPersonalDetailsForm={loadPersonalDetailsForm}
+            />
             <InstituteInfo
                 formData={EducationFormData}
                 cvData={cvData}

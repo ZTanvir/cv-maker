@@ -4,19 +4,27 @@ import CvInfo from "./CvInfo/CvInfo";
 import CvPreview from "./CvPreview/CvPreview";
 import filledCvData from "./FilledCvData.js";
 import emptyCvData from "./EmptyCvData.js";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import styles from "../styles/cv.module.css";
 
 const Cv = () => {
     const [cvData, setCvData] = useState(filledCvData);
     const [cvFont, setCvFont] = useState("Merriweather");
     const [cvColor, setCvColor] = useState("#CDB4DB");
+    // Hidden button under Personal Details form section
+    const resetPersonalDetailsFormBtn = useRef();
+    // Hidden Load button under Personal Details form section
+    const loadPersonalDetailsFormBtn = useRef();
 
     const handleClearBtn = (e) => {
         setCvData(emptyCvData);
+        // Clear the Personal deatils form
+        resetPersonalDetailsFormBtn.current.click();
     };
     const handleLoadBtn = (e) => {
         setCvData(filledCvData);
+        // Load the personal details form
+        loadPersonalDetailsFormBtn.current.click();
     };
     // CvFonts component btn
     const handleFontBtn = (e) => {
@@ -43,6 +51,8 @@ const Cv = () => {
                     cvFont={cvFont}
                     handleColorBtn={handleColorBtn}
                     cvColor={cvColor}
+                    resetPersonalDetailsForm={resetPersonalDetailsFormBtn}
+                    loadPersonalDetailsForm={loadPersonalDetailsFormBtn}
                 />
             </aside>
             <main className={styles.cvPreviewContainer}>
