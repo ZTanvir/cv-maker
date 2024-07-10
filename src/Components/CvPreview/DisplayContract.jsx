@@ -11,17 +11,26 @@ const DisplayContract = ({ cvData }) => {
         item.visibility === true ? (
           <div className={styles.contactList} key={item.id}>
             <div className={styles.contactItem}>
-              <p>Phone</p>
+              <div className={styles.phoneDetails}>
+                <span className="material-symbols-outlined">call</span>
+                <span>Phone</span>
+              </div>
               <p>{item.phoneNumber}</p>
             </div>
             <div className={styles.contactItem}>
-              <p>Email</p>
+              <div className={styles.mailDetails}>
+                <span className="material-symbols-outlined">mail</span>
+                <span>Email</span>
+              </div>
               <p>{item.email}</p>
             </div>
-            <div className={styles.contactItem}>
-              <p>Address</p>
+            <address className={styles.contactItem}>
+              <div className={styles.addressDetails}>
+                <span className="material-symbols-outlined">home</span>
+                <span>Address</span>
+              </div>
               <p>{item.address}</p>
-            </div>
+            </address>
           </div>
         ) : null
       )}

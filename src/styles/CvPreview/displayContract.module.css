@@ -9,5 +9,15 @@
   flex-direction: column;
   gap: 1rem;
 }
-.contactItem {
+:is(.addressDetails, .mailDetails, .phoneDetails) {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+:is(
+    .addressDetails span:first-child,
+    .mailDetails span:first-child,
+    .phoneDetails span:first-child
+  ) {
+  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 15;
 }

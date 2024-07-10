@@ -4,7 +4,7 @@ const filledCvData = {
         lname: "Mayers",
         profession: "Front end developer",
         jobSummary:
-            "As a Front-End Developer, I am the architect of your website's user experience. I also translate designs into clean, functional code using HTML, CSS, and JavaScript",
+            "As a Front-End Developer, I am the architect of your website's user experience. I also translate designs into clean, functional code using HTML, CSS, and JavaScript,React.",
     },
     education: [
         {

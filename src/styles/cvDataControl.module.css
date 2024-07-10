@@ -17,6 +17,7 @@
     background-color: #ebecef;
     padding: 0.25rem;
     text-align: center;
+    border-radius: 0.5rem;
 }
 :is(.clearBtn, .loadBtn) {
     cursor: pointer;
