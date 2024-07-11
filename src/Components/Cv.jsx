@@ -7,6 +7,7 @@ import emptyCvData from "./EmptyCvData.js";
 
 import { useRef, useState } from "react";
 import { useReactToPrint } from "react-to-print";
+import Html2Pdf from "js-html2pdf";
 import styles from "../styles/cv.module.css";
 
 const Cv = () => {
@@ -30,9 +31,23 @@ const Cv = () => {
         // Load the personal details form
         loadPersonalDetailsFormBtn.current.click();
     };
+    // print the Cv using react-to-print and js-html2pdf library
     const handleDownloadCvBtn = useReactToPrint({
         content: () => cvPreviewElement.current,
+        print: async (printIframe) => {
+            const document = printIframe.contentDocument;
+            if (document) {
+                const html = cvPreviewElement.current;
+                const options = {
+                    margin: 0,
+                    filename: `${cvData.personal_details.fname}Cv.pdf`,
+                };
+                const exporter = new Html2Pdf(html, options);
+                await exporter.getPdf(options);
+            }
+        },
     });
+
     // CvFonts component btn
     const handleFontBtn = (e) => {
         let font = e.currentTarget.dataset["cvfont"];

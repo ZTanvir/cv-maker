@@ -15,11 +15,15 @@ const CvDataControl = ({
             <div className={styles.loadBtn} onClick={handleLoadBtn}>
                 Load Example
             </div>
-            <div onClick={handleDownloadCvBtn} className={styles.downloadPdf}>
+            <div
+                title="Download as pdf"
+                onClick={handleDownloadCvBtn}
+                className={styles.downloadPdf}
+            >
                 <img
                     className={styles.pdfDownloaderImg}
                     src={pdfDownloaderIcon}
-                    alt=""
+                    alt="Download cv"
                 />
             </div>
         </section>
