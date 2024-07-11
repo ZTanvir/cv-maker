@@ -1,7 +1,6 @@
 .cvDataControlContainer {
     display: flex;
     padding: 1rem 0.5rem;
-    flex-wrap: wrap;
     justify-content: space-around;
     gap: 0.5rem;
     background-color: #ffffff;
@@ -19,7 +18,11 @@
     text-align: center;
     border-radius: 0.5rem;
 }
-:is(.clearBtn, .loadBtn) {
+.pdfDownloaderImg {
+    max-width: 2rem;
+    max-height: 2rem;
+}
+:is(.clearBtn, .loadBtn, .pdfDownloaderImg) {
     cursor: pointer;
     min-width: fit-content;
 }

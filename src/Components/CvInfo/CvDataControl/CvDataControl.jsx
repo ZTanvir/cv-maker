@@ -1,6 +1,11 @@
 import styles from "../../../styles/cvDataControl.module.css";
+import pdfDownloaderIcon from "../../../assets/pdfDownload.svg";
 
-const CvDataControl = ({ handleClearBtn, handleLoadBtn }) => {
+const CvDataControl = ({
+    handleClearBtn,
+    handleLoadBtn,
+    handleDownloadCvBtn,
+}) => {
     return (
         <section className={styles.cvDataControlContainer}>
             <div className={styles.clearBtn} onClick={handleClearBtn}>
@@ -9,6 +14,13 @@ const CvDataControl = ({ handleClearBtn, handleLoadBtn }) => {
             </div>
             <div className={styles.loadBtn} onClick={handleLoadBtn}>
                 Load Example
+            </div>
+            <div onClick={handleDownloadCvBtn} className={styles.downloadPdf}>
+                <img
+                    className={styles.pdfDownloaderImg}
+                    src={pdfDownloaderIcon}
+                    alt=""
+                />
             </div>
         </section>
     );

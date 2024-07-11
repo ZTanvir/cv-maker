@@ -6,10 +6,12 @@ import DisplayExperience from "./DisplayExperience";
 import DisplayContract from "./DisplayContract";
 import DisplaySkills from "./DisplaySkills";
 import styles from "../../styles/cvPreview.module.css";
+import { forwardRef } from "react";
 
-const CvPreview = ({ cvInfo, cvFont, cvColor }) => {
+const CvPreview = forwardRef(({ cvInfo, cvFont, cvColor }, ref) => {
     return (
         <main
+            ref={ref}
             style={{
                 fontFamily: `${cvFont}, Times, serif`,
                 "--cv-color": cvColor,
@@ -37,5 +39,5 @@ const CvPreview = ({ cvInfo, cvFont, cvColor }) => {
             </main>
         </main>
     );
-};
+});
 export default CvPreview;

@@ -20,6 +20,7 @@ const CvInfo = ({
     handleClearBtn,
     handleLoadBtn,
     handleFontBtn,
+    handleDownloadCvBtn,
     cvFont,
     handleColorBtn,
     cvColor,
@@ -45,6 +46,7 @@ const CvInfo = ({
             <CvDataControl
                 handleClearBtn={handleClearBtn}
                 handleLoadBtn={handleLoadBtn}
+                handleDownloadCvBtn={handleDownloadCvBtn}
             />
             {Boolean(displaySection === "content") ? (
                 <div className={styles.cvInFo}>

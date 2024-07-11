@@ -4,7 +4,9 @@ import CvInfo from "./CvInfo/CvInfo";
 import CvPreview from "./CvPreview/CvPreview";
 import filledCvData from "./FilledCvData.js";
 import emptyCvData from "./EmptyCvData.js";
+
 import { useRef, useState } from "react";
+import { useReactToPrint } from "react-to-print";
 import styles from "../styles/cv.module.css";
 
 const Cv = () => {
@@ -15,6 +17,8 @@ const Cv = () => {
     const resetPersonalDetailsFormBtn = useRef();
     // Hidden Load button under Personal Details form section
     const loadPersonalDetailsFormBtn = useRef();
+    // Cv Preview component
+    const cvPreviewElement = useRef();
 
     const handleClearBtn = (e) => {
         setCvData(emptyCvData);
@@ -26,6 +30,9 @@ const Cv = () => {
         // Load the personal details form
         loadPersonalDetailsFormBtn.current.click();
     };
+    const handleDownloadCvBtn = useReactToPrint({
+        content: () => cvPreviewElement.current,
+    });
     // CvFonts component btn
     const handleFontBtn = (e) => {
         let font = e.currentTarget.dataset["cvfont"];
@@ -47,6 +54,7 @@ const Cv = () => {
                     setCvData={setCvData}
                     handleClearBtn={handleClearBtn}
                     handleLoadBtn={handleLoadBtn}
+                    handleDownloadCvBtn={handleDownloadCvBtn}
                     handleFontBtn={handleFontBtn}
                     cvFont={cvFont}
                     handleColorBtn={handleColorBtn}
@@ -56,7 +64,12 @@ const Cv = () => {
                 />
             </aside>
             <main className={styles.cvPreviewContainer}>
-                <CvPreview cvInfo={cvData} cvFont={cvFont} cvColor={cvColor} />
+                <CvPreview
+                    cvInfo={cvData}
+                    cvFont={cvFont}
+                    cvColor={cvColor}
+                    ref={cvPreviewElement}
+                />
             </main>
         </section>
     );

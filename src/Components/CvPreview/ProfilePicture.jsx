@@ -56,6 +56,7 @@ const ProfilePicture = ({}) => {
                 </div>
 
                 <input
+                    value=""
                     onChange={handleProfilePicture}
                     ref={inputFileEl}
                     type="file"
