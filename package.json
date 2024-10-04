@@ -1,4 +1,5 @@
 {
+    "homepage": "<https://ZTanvir.github.io/cv-maker>",
     "name": "cv-maker",
     "private": true,
     "version": "0.0.0",
@@ -8,8 +9,8 @@
         "build": "vite build",
         "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview",
-	"predeploy":"npm run build",
-	"deploy":"gh-pages -d build"
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
     },
     "dependencies": {
         "js-html2pdf": "^1.1.4",
